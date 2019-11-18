@@ -1,0 +1,18 @@
+<template>
+  <div class="container">
+    学员中心
+  </div>
+</template>
+
+<script>
+  import wepy from '@wepy/core'
+
+  wepy.page({})
+</script>
+
+<style lang="less"></style>
+<config>
+{
+    navigationBarTitleText: '学员中心'
+}
+</config>

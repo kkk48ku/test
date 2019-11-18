@@ -1,0 +1,18 @@
+<template>
+  <div class="container">
+    我的课程
+  </div>
+</template>
+
+<script>
+  import wepy from '@wepy/core'
+
+  wepy.page({})
+</script>
+
+<style lang="less"></style>
+<config>
+{
+    navigationBarTitleText: '我的课程'
+}
+</config>

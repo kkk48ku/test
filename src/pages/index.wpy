@@ -1,0 +1,42 @@
+<style lang="less">
+  basesearch {
+    width: 100%;
+  }
+</style>
+
+<template>
+  <div class="container">
+    <basesearch :label="'测试'" :actionBtn="'搜索'" :inputVal="inputVal" @inputChange="handleInputChange"></basesearch>
+  </div>
+</template>
+
+<script>
+  import wepy from '@wepy/core'
+  import eventHub from '../common/eventHub'
+  import testMixin from '../mixins/test'
+
+  wepy.page({
+    data: {
+      inputVal: ''
+    },
+    methods: {
+      handleInput(e) {
+        console.log(e)
+      },
+      onSearch(e) {
+        console.log(e)
+      },
+      handleInputChange(val) {
+        this.inputVal = val
+      }
+    }
+  })
+</script>
+<config>
+{
+    navigationBarTitleText: '首页',
+    usingComponents: {
+      basesearch: '../components/base-search',
+    }
+}
+</config>
