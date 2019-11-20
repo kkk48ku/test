@@ -1,13 +1,13 @@
-const path = require('path')
-var prod = process.env.NODE_ENV === 'production'
+const path = require('path');
+var prod = process.env.NODE_ENV === 'production';
 
 function resolve(dist) {
-  return path.join(__dirname, dist)
+  return path.join(__dirname, dist);
 }
 
 module.exports = {
   wpyExt: '.wpy',
-  static: ['./src/static'],
+  static: ['./src/images'],
   eslint: true,
   cliLogs: !prod,
   build: {},
@@ -33,4 +33,4 @@ module.exports = {
   appConfig: {
     noPromiseAPI: ['createSelectorQuery']
   }
-}
+};

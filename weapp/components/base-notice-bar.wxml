@@ -1,0 +1,4 @@
+
+<view class="base-notify-container">
+  <van-notice-bar bind_init="_initComponent" mode="closeable" text="{{ text }}" wx:if="{{ text }}"></van-notice-bar>
+</view>

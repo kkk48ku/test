@@ -2,6 +2,8 @@
     "navigationBarTitleText": "首页",
     "component": true,
     "usingComponents": {
-        "basesearch": "../components/base-search"
+        "basesearch": "../components/base-search",
+        "basenoticebar": "../components/base-notice-bar",
+        "baseswiper": "../components/base-swiper"
     }
 }

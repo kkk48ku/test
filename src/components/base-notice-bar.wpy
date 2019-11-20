@@ -1,0 +1,24 @@
+<template>
+  <div class="base-notify-container">
+    <van-notice-bar mode="closeable" :text="text" v-if="text" />
+  </div>
+</template>
+
+<script>
+import wepy from '@wepy/core'
+wepy.component({
+  props: {
+    text: String
+  }
+})
+</script>
+
+<style lang="less" scoped></style>
+
+<config>
+{
+    "usingComponents": {
+        "van-notice-bar": "./vant-weapp/notice-bar/index"
+    }
+}
+</config>

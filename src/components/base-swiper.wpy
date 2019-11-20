@@ -1,0 +1,33 @@
+<template>
+  <div class="base-swiper-container">
+    <swiper
+      :indicator-dots="swipersetting.indicatorDots"
+      :indicator-color="swipersetting.indicatorColor"
+      :indicator-active-color="swipersetting.indicatorActiveColor"
+      :autoplay="swipersetting.autoplay"
+      :interval="swipersetting.interval"
+      :duration="swipersetting.duration"
+      :circular="swipersetting.circular"
+    >
+      <swiper-item v-for="item of swipersetting.swiperGroup" :key="item.id">
+        {{ item.id }}
+      </swiper-item>
+    </swiper>
+  </div>
+</template>
+
+<script>
+import wepy from '@wepy/core'
+wepy.component({
+  props: {
+    swipersetting: String
+  }
+})
+</script>
+
+<style lang="less" scoped>
+.base-swiper-container {
+  background: #000;
+  color: #fff;
+}
+</style>

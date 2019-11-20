@@ -43,12 +43,10 @@ _core["default"].component({
           _this.loading = false;
         }, 3000);
       }
-
-      return;
     },
     searchDatahandle: function searchDatahandle(data) {}
   }
-}, {info: {"components":{"van-search":{"path":"vant-weapp\\search\\index"}},"on":{}}, handlers: {'9-461': {"input": function proxy () {
+}, {info: {"components":{"van-search":{"path":"vant-weapp\\search\\index"},"baseloading":{"path":"base-loading"}},"on":{}}, handlers: {'7-21': {"input": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
@@ -62,14 +60,14 @@ _core["default"].component({
         _vm.handleInputBlur($event)
       })();
     
-  }},'9-463': {"tap": function proxy () {
+  }},'7-23': {"tap": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.handleSearchBtnClick($event)
       })();
     
-  }}}, models: {'208': {
+  }}}, models: {'7': {
       type: "input",
       expr: "inputVal",
       handler: function set ($v) {
@@ -77,7 +75,7 @@ _core["default"].component({
         _vm.inputVal = $v;
       
     }
-    }} }, {info: {"components":{"van-search":{"path":"vant-weapp\\search\\index"}},"on":{}}, handlers: {'9-461': {"input": function proxy () {
+    }} }, {info: {"components":{"van-search":{"path":"vant-weapp\\search\\index"},"baseloading":{"path":"base-loading"}},"on":{}}, handlers: {'7-21': {"input": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
@@ -91,14 +89,14 @@ _core["default"].component({
         _vm.handleInputBlur($event)
       })();
     
-  }},'9-463': {"tap": function proxy () {
+  }},'7-23': {"tap": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.handleSearchBtnClick($event)
       })();
     
-  }}}, models: {'208': {
+  }}}, models: {'7': {
       type: "input",
       expr: "inputVal",
       handler: function set ($v) {
@@ -106,7 +104,7 @@ _core["default"].component({
         _vm.inputVal = $v;
       
     }
-    }} }, {info: {"components":{"van-search":{"path":"vant-weapp\\search\\index"}},"on":{}}, handlers: {'9-461': {"input": function proxy () {
+    }} }, {info: {"components":{"van-search":{"path":"vant-weapp\\search\\index"},"baseloading":{"path":"base-loading"}},"on":{}}, handlers: {'7-21': {"input": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
@@ -120,14 +118,14 @@ _core["default"].component({
         _vm.handleInputBlur($event)
       })();
     
-  }},'9-463': {"tap": function proxy () {
+  }},'7-23': {"tap": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.handleSearchBtnClick($event)
       })();
     
-  }}}, models: {'208': {
+  }}}, models: {'7': {
       type: "input",
       expr: "inputVal",
       handler: function set ($v) {
@@ -135,7 +133,7 @@ _core["default"].component({
         _vm.inputVal = $v;
       
     }
-    }} }, {info: {"components":{"van-search":{"path":"vant-weapp\\search\\index"}},"on":{}}, handlers: {'9-461': {"input": function proxy () {
+    }} }, {info: {"components":{"van-search":{"path":"vant-weapp\\search\\index"},"baseloading":{"path":"base-loading"}},"on":{}}, handlers: {'7-21': {"input": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
@@ -149,14 +147,14 @@ _core["default"].component({
         _vm.handleInputBlur($event)
       })();
     
-  }},'9-463': {"tap": function proxy () {
+  }},'7-23': {"tap": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.handleSearchBtnClick($event)
       })();
     
-  }}}, models: {'208': {
+  }}}, models: {'7': {
       type: "input",
       expr: "inputVal",
       handler: function set ($v) {
@@ -164,7 +162,7 @@ _core["default"].component({
         _vm.inputVal = $v;
       
     }
-    }} }, {info: {"components":{"van-search":{"path":"vant-weapp\\search\\index"}},"on":{}}, handlers: {'9-461': {"input": function proxy () {
+    }} }, {info: {"components":{"van-search":{"path":"vant-weapp\\search\\index"},"baseloading":{"path":"base-loading"}},"on":{}}, handlers: {'7-21': {"input": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
@@ -178,14 +176,1435 @@ _core["default"].component({
         _vm.handleInputBlur($event)
       })();
     
-  }},'9-463': {"tap": function proxy () {
+  }},'7-23': {"tap": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
         _vm.handleSearchBtnClick($event)
       })();
     
-  }}}, models: {'208': {
+  }}}, models: {'7': {
+      type: "input",
+      expr: "inputVal",
+      handler: function set ($v) {
+      var _vm=this;
+        _vm.inputVal = $v;
+      
+    }
+    }} }, {info: {"components":{"van-search":{"path":"vant-weapp\\search\\index"},"baseloading":{"path":"base-loading"}},"on":{}}, handlers: {'7-21': {"input": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleInputChange($event)
+      })();
+    
+  }, "blur": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleInputBlur($event)
+      })();
+    
+  }},'7-23': {"tap": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleSearchBtnClick($event)
+      })();
+    
+  }}}, models: {'7': {
+      type: "input",
+      expr: "inputVal",
+      handler: function set ($v) {
+      var _vm=this;
+        _vm.inputVal = $v;
+      
+    }
+    }} }, {info: {"components":{"van-search":{"path":"vant-weapp\\search\\index"},"baseloading":{"path":"base-loading"}},"on":{}}, handlers: {'7-21': {"input": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleInputChange($event)
+      })();
+    
+  }, "blur": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleInputBlur($event)
+      })();
+    
+  }},'7-23': {"tap": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleSearchBtnClick($event)
+      })();
+    
+  }}}, models: {'7': {
+      type: "input",
+      expr: "inputVal",
+      handler: function set ($v) {
+      var _vm=this;
+        _vm.inputVal = $v;
+      
+    }
+    }} }, {info: {"components":{"van-search":{"path":"vant-weapp\\search\\index"},"baseloading":{"path":"base-loading"}},"on":{}}, handlers: {'7-21': {"input": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleInputChange($event)
+      })();
+    
+  }, "blur": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleInputBlur($event)
+      })();
+    
+  }},'7-23': {"tap": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleSearchBtnClick($event)
+      })();
+    
+  }}}, models: {'7': {
+      type: "input",
+      expr: "inputVal",
+      handler: function set ($v) {
+      var _vm=this;
+        _vm.inputVal = $v;
+      
+    }
+    }} }, {info: {"components":{"van-search":{"path":"vant-weapp\\search\\index"},"baseloading":{"path":"base-loading"}},"on":{}}, handlers: {'7-21': {"input": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleInputChange($event)
+      })();
+    
+  }, "blur": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleInputBlur($event)
+      })();
+    
+  }},'7-23': {"tap": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleSearchBtnClick($event)
+      })();
+    
+  }}}, models: {'7': {
+      type: "input",
+      expr: "inputVal",
+      handler: function set ($v) {
+      var _vm=this;
+        _vm.inputVal = $v;
+      
+    }
+    }} }, {info: {"components":{"van-search":{"path":"vant-weapp\\search\\index"},"baseloading":{"path":"base-loading"}},"on":{}}, handlers: {'7-21': {"input": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleInputChange($event)
+      })();
+    
+  }, "blur": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleInputBlur($event)
+      })();
+    
+  }},'7-23': {"tap": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleSearchBtnClick($event)
+      })();
+    
+  }}}, models: {'7': {
+      type: "input",
+      expr: "inputVal",
+      handler: function set ($v) {
+      var _vm=this;
+        _vm.inputVal = $v;
+      
+    }
+    }} }, {info: {"components":{"van-search":{"path":"vant-weapp\\search\\index"},"baseloading":{"path":"base-loading"}},"on":{}}, handlers: {'7-21': {"input": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleInputChange($event)
+      })();
+    
+  }, "blur": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleInputBlur($event)
+      })();
+    
+  }},'7-23': {"tap": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleSearchBtnClick($event)
+      })();
+    
+  }}}, models: {'7': {
+      type: "input",
+      expr: "inputVal",
+      handler: function set ($v) {
+      var _vm=this;
+        _vm.inputVal = $v;
+      
+    }
+    }} }, {info: {"components":{"van-search":{"path":"vant-weapp\\search\\index"},"baseloading":{"path":"base-loading"}},"on":{}}, handlers: {'7-21': {"input": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleInputChange($event)
+      })();
+    
+  }, "blur": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleInputBlur($event)
+      })();
+    
+  }},'7-23': {"tap": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleSearchBtnClick($event)
+      })();
+    
+  }}}, models: {'7': {
+      type: "input",
+      expr: "inputVal",
+      handler: function set ($v) {
+      var _vm=this;
+        _vm.inputVal = $v;
+      
+    }
+    }} }, {info: {"components":{"van-search":{"path":"vant-weapp\\search\\index"},"baseloading":{"path":"base-loading"}},"on":{}}, handlers: {'7-21': {"input": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleInputChange($event)
+      })();
+    
+  }, "blur": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleInputBlur($event)
+      })();
+    
+  }},'7-23': {"tap": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleSearchBtnClick($event)
+      })();
+    
+  }}}, models: {'7': {
+      type: "input",
+      expr: "inputVal",
+      handler: function set ($v) {
+      var _vm=this;
+        _vm.inputVal = $v;
+      
+    }
+    }} }, {info: {"components":{"van-search":{"path":"vant-weapp\\search\\index"},"baseloading":{"path":"base-loading"}},"on":{}}, handlers: {'7-21': {"input": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleInputChange($event)
+      })();
+    
+  }, "blur": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleInputBlur($event)
+      })();
+    
+  }},'7-23': {"tap": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleSearchBtnClick($event)
+      })();
+    
+  }}}, models: {'7': {
+      type: "input",
+      expr: "inputVal",
+      handler: function set ($v) {
+      var _vm=this;
+        _vm.inputVal = $v;
+      
+    }
+    }} }, {info: {"components":{"van-search":{"path":"vant-weapp\\search\\index"},"baseloading":{"path":"base-loading"}},"on":{}}, handlers: {'7-21': {"input": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleInputChange($event)
+      })();
+    
+  }, "blur": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleInputBlur($event)
+      })();
+    
+  }},'7-23': {"tap": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleSearchBtnClick($event)
+      })();
+    
+  }}}, models: {'7': {
+      type: "input",
+      expr: "inputVal",
+      handler: function set ($v) {
+      var _vm=this;
+        _vm.inputVal = $v;
+      
+    }
+    }} }, {info: {"components":{"van-search":{"path":"vant-weapp\\search\\index"},"baseloading":{"path":"base-loading"}},"on":{}}, handlers: {'7-21': {"input": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleInputChange($event)
+      })();
+    
+  }, "blur": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleInputBlur($event)
+      })();
+    
+  }},'7-23': {"tap": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleSearchBtnClick($event)
+      })();
+    
+  }}}, models: {'7': {
+      type: "input",
+      expr: "inputVal",
+      handler: function set ($v) {
+      var _vm=this;
+        _vm.inputVal = $v;
+      
+    }
+    }} }, {info: {"components":{"van-search":{"path":"vant-weapp\\search\\index"},"baseloading":{"path":"base-loading"}},"on":{}}, handlers: {'7-21': {"input": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleInputChange($event)
+      })();
+    
+  }, "blur": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleInputBlur($event)
+      })();
+    
+  }},'7-23': {"tap": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleSearchBtnClick($event)
+      })();
+    
+  }}}, models: {'7': {
+      type: "input",
+      expr: "inputVal",
+      handler: function set ($v) {
+      var _vm=this;
+        _vm.inputVal = $v;
+      
+    }
+    }} }, {info: {"components":{"van-search":{"path":"vant-weapp\\search\\index"},"baseloading":{"path":"base-loading"}},"on":{}}, handlers: {'7-21': {"input": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleInputChange($event)
+      })();
+    
+  }, "blur": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleInputBlur($event)
+      })();
+    
+  }},'7-23': {"tap": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleSearchBtnClick($event)
+      })();
+    
+  }}}, models: {'7': {
+      type: "input",
+      expr: "inputVal",
+      handler: function set ($v) {
+      var _vm=this;
+        _vm.inputVal = $v;
+      
+    }
+    }} }, {info: {"components":{"van-search":{"path":"vant-weapp\\search\\index"},"baseloading":{"path":"base-loading"}},"on":{}}, handlers: {'7-21': {"input": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleInputChange($event)
+      })();
+    
+  }, "blur": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleInputBlur($event)
+      })();
+    
+  }},'7-23': {"tap": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleSearchBtnClick($event)
+      })();
+    
+  }}}, models: {'7': {
+      type: "input",
+      expr: "inputVal",
+      handler: function set ($v) {
+      var _vm=this;
+        _vm.inputVal = $v;
+      
+    }
+    }} }, {info: {"components":{"van-search":{"path":"vant-weapp\\search\\index"},"baseloading":{"path":"base-loading"}},"on":{}}, handlers: {'7-21': {"input": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleInputChange($event)
+      })();
+    
+  }, "blur": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleInputBlur($event)
+      })();
+    
+  }},'7-23': {"tap": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleSearchBtnClick($event)
+      })();
+    
+  }}}, models: {'7': {
+      type: "input",
+      expr: "inputVal",
+      handler: function set ($v) {
+      var _vm=this;
+        _vm.inputVal = $v;
+      
+    }
+    }} }, {info: {"components":{"van-search":{"path":"vant-weapp\\search\\index"},"baseloading":{"path":"base-loading"}},"on":{}}, handlers: {'7-21': {"input": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleInputChange($event)
+      })();
+    
+  }, "blur": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleInputBlur($event)
+      })();
+    
+  }},'7-23': {"tap": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleSearchBtnClick($event)
+      })();
+    
+  }}}, models: {'7': {
+      type: "input",
+      expr: "inputVal",
+      handler: function set ($v) {
+      var _vm=this;
+        _vm.inputVal = $v;
+      
+    }
+    }} }, {info: {"components":{"van-search":{"path":"vant-weapp\\search\\index"},"baseloading":{"path":"base-loading"}},"on":{}}, handlers: {'7-21': {"input": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleInputChange($event)
+      })();
+    
+  }, "blur": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleInputBlur($event)
+      })();
+    
+  }},'7-23': {"tap": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleSearchBtnClick($event)
+      })();
+    
+  }}}, models: {'7': {
+      type: "input",
+      expr: "inputVal",
+      handler: function set ($v) {
+      var _vm=this;
+        _vm.inputVal = $v;
+      
+    }
+    }} }, {info: {"components":{"van-search":{"path":"vant-weapp\\search\\index"},"baseloading":{"path":"base-loading"}},"on":{}}, handlers: {'7-21': {"input": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleInputChange($event)
+      })();
+    
+  }, "blur": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleInputBlur($event)
+      })();
+    
+  }},'7-23': {"tap": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleSearchBtnClick($event)
+      })();
+    
+  }}}, models: {'7': {
+      type: "input",
+      expr: "inputVal",
+      handler: function set ($v) {
+      var _vm=this;
+        _vm.inputVal = $v;
+      
+    }
+    }} }, {info: {"components":{"van-search":{"path":"vant-weapp\\search\\index"},"baseloading":{"path":"base-loading"}},"on":{}}, handlers: {'7-21': {"input": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleInputChange($event)
+      })();
+    
+  }, "blur": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleInputBlur($event)
+      })();
+    
+  }},'7-23': {"tap": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleSearchBtnClick($event)
+      })();
+    
+  }}}, models: {'7': {
+      type: "input",
+      expr: "inputVal",
+      handler: function set ($v) {
+      var _vm=this;
+        _vm.inputVal = $v;
+      
+    }
+    }} }, {info: {"components":{"van-search":{"path":"vant-weapp\\search\\index"},"baseloading":{"path":"base-loading"}},"on":{}}, handlers: {'7-21': {"input": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleInputChange($event)
+      })();
+    
+  }, "blur": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleInputBlur($event)
+      })();
+    
+  }},'7-23': {"tap": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleSearchBtnClick($event)
+      })();
+    
+  }}}, models: {'7': {
+      type: "input",
+      expr: "inputVal",
+      handler: function set ($v) {
+      var _vm=this;
+        _vm.inputVal = $v;
+      
+    }
+    }} }, {info: {"components":{"van-search":{"path":"vant-weapp\\search\\index"},"baseloading":{"path":"base-loading"}},"on":{}}, handlers: {'7-21': {"input": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleInputChange($event)
+      })();
+    
+  }, "blur": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleInputBlur($event)
+      })();
+    
+  }},'7-23': {"tap": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleSearchBtnClick($event)
+      })();
+    
+  }}}, models: {'7': {
+      type: "input",
+      expr: "inputVal",
+      handler: function set ($v) {
+      var _vm=this;
+        _vm.inputVal = $v;
+      
+    }
+    }} }, {info: {"components":{"van-search":{"path":"vant-weapp\\search\\index"},"baseloading":{"path":"base-loading"}},"on":{}}, handlers: {'7-21': {"input": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleInputChange($event)
+      })();
+    
+  }, "blur": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleInputBlur($event)
+      })();
+    
+  }},'7-23': {"tap": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleSearchBtnClick($event)
+      })();
+    
+  }}}, models: {'7': {
+      type: "input",
+      expr: "inputVal",
+      handler: function set ($v) {
+      var _vm=this;
+        _vm.inputVal = $v;
+      
+    }
+    }} }, {info: {"components":{"van-search":{"path":"vant-weapp\\search\\index"},"baseloading":{"path":"base-loading"}},"on":{}}, handlers: {'7-21': {"input": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleInputChange($event)
+      })();
+    
+  }, "blur": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleInputBlur($event)
+      })();
+    
+  }},'7-23': {"tap": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleSearchBtnClick($event)
+      })();
+    
+  }}}, models: {'7': {
+      type: "input",
+      expr: "inputVal",
+      handler: function set ($v) {
+      var _vm=this;
+        _vm.inputVal = $v;
+      
+    }
+    }} }, {info: {"components":{"van-search":{"path":"vant-weapp\\search\\index"},"baseloading":{"path":"base-loading"}},"on":{}}, handlers: {'7-21': {"input": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleInputChange($event)
+      })();
+    
+  }, "blur": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleInputBlur($event)
+      })();
+    
+  }},'7-23': {"tap": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleSearchBtnClick($event)
+      })();
+    
+  }}}, models: {'7': {
+      type: "input",
+      expr: "inputVal",
+      handler: function set ($v) {
+      var _vm=this;
+        _vm.inputVal = $v;
+      
+    }
+    }} }, {info: {"components":{"van-search":{"path":"vant-weapp\\search\\index"},"baseloading":{"path":"base-loading"}},"on":{}}, handlers: {'7-21': {"input": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleInputChange($event)
+      })();
+    
+  }, "blur": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleInputBlur($event)
+      })();
+    
+  }},'7-23': {"tap": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleSearchBtnClick($event)
+      })();
+    
+  }}}, models: {'7': {
+      type: "input",
+      expr: "inputVal",
+      handler: function set ($v) {
+      var _vm=this;
+        _vm.inputVal = $v;
+      
+    }
+    }} }, {info: {"components":{"van-search":{"path":"vant-weapp\\search\\index"},"baseloading":{"path":"base-loading"}},"on":{}}, handlers: {'7-21': {"input": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleInputChange($event)
+      })();
+    
+  }, "blur": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleInputBlur($event)
+      })();
+    
+  }},'7-23': {"tap": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleSearchBtnClick($event)
+      })();
+    
+  }}}, models: {'7': {
+      type: "input",
+      expr: "inputVal",
+      handler: function set ($v) {
+      var _vm=this;
+        _vm.inputVal = $v;
+      
+    }
+    }} }, {info: {"components":{"van-search":{"path":"vant-weapp\\search\\index"},"baseloading":{"path":"base-loading"}},"on":{}}, handlers: {'7-21': {"input": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleInputChange($event)
+      })();
+    
+  }, "blur": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleInputBlur($event)
+      })();
+    
+  }},'7-23': {"tap": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleSearchBtnClick($event)
+      })();
+    
+  }}}, models: {'7': {
+      type: "input",
+      expr: "inputVal",
+      handler: function set ($v) {
+      var _vm=this;
+        _vm.inputVal = $v;
+      
+    }
+    }} }, {info: {"components":{"van-search":{"path":"vant-weapp\\search\\index"},"baseloading":{"path":"base-loading"}},"on":{}}, handlers: {'7-21': {"input": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleInputChange($event)
+      })();
+    
+  }, "blur": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleInputBlur($event)
+      })();
+    
+  }},'7-23': {"tap": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleSearchBtnClick($event)
+      })();
+    
+  }}}, models: {'7': {
+      type: "input",
+      expr: "inputVal",
+      handler: function set ($v) {
+      var _vm=this;
+        _vm.inputVal = $v;
+      
+    }
+    }} }, {info: {"components":{"van-search":{"path":"vant-weapp\\search\\index"},"baseloading":{"path":"base-loading"}},"on":{}}, handlers: {'7-21': {"input": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleInputChange($event)
+      })();
+    
+  }, "blur": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleInputBlur($event)
+      })();
+    
+  }},'7-23': {"tap": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleSearchBtnClick($event)
+      })();
+    
+  }}}, models: {'7': {
+      type: "input",
+      expr: "inputVal",
+      handler: function set ($v) {
+      var _vm=this;
+        _vm.inputVal = $v;
+      
+    }
+    }} }, {info: {"components":{"van-search":{"path":"vant-weapp\\search\\index"},"baseloading":{"path":"base-loading"}},"on":{}}, handlers: {'7-21': {"input": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleInputChange($event)
+      })();
+    
+  }, "blur": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleInputBlur($event)
+      })();
+    
+  }},'7-23': {"tap": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleSearchBtnClick($event)
+      })();
+    
+  }}}, models: {'7': {
+      type: "input",
+      expr: "inputVal",
+      handler: function set ($v) {
+      var _vm=this;
+        _vm.inputVal = $v;
+      
+    }
+    }} }, {info: {"components":{"van-search":{"path":"vant-weapp\\search\\index"},"baseloading":{"path":"base-loading"}},"on":{}}, handlers: {'7-21': {"input": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleInputChange($event)
+      })();
+    
+  }, "blur": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleInputBlur($event)
+      })();
+    
+  }},'7-23': {"tap": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleSearchBtnClick($event)
+      })();
+    
+  }}}, models: {'7': {
+      type: "input",
+      expr: "inputVal",
+      handler: function set ($v) {
+      var _vm=this;
+        _vm.inputVal = $v;
+      
+    }
+    }} }, {info: {"components":{"van-search":{"path":"vant-weapp\\search\\index"},"baseloading":{"path":"base-loading"}},"on":{}}, handlers: {'7-21': {"input": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleInputChange($event)
+      })();
+    
+  }, "blur": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleInputBlur($event)
+      })();
+    
+  }},'7-23': {"tap": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleSearchBtnClick($event)
+      })();
+    
+  }}}, models: {'7': {
+      type: "input",
+      expr: "inputVal",
+      handler: function set ($v) {
+      var _vm=this;
+        _vm.inputVal = $v;
+      
+    }
+    }} }, {info: {"components":{"van-search":{"path":"vant-weapp\\search\\index"},"baseloading":{"path":"base-loading"}},"on":{}}, handlers: {'7-21': {"input": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleInputChange($event)
+      })();
+    
+  }, "blur": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleInputBlur($event)
+      })();
+    
+  }},'7-23': {"tap": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleSearchBtnClick($event)
+      })();
+    
+  }}}, models: {'7': {
+      type: "input",
+      expr: "inputVal",
+      handler: function set ($v) {
+      var _vm=this;
+        _vm.inputVal = $v;
+      
+    }
+    }} }, {info: {"components":{"van-search":{"path":"vant-weapp\\search\\index"},"baseloading":{"path":"base-loading"}},"on":{}}, handlers: {'7-21': {"input": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleInputChange($event)
+      })();
+    
+  }, "blur": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleInputBlur($event)
+      })();
+    
+  }},'7-23': {"tap": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleSearchBtnClick($event)
+      })();
+    
+  }}}, models: {'7': {
+      type: "input",
+      expr: "inputVal",
+      handler: function set ($v) {
+      var _vm=this;
+        _vm.inputVal = $v;
+      
+    }
+    }} }, {info: {"components":{"van-search":{"path":"vant-weapp\\search\\index"},"baseloading":{"path":"base-loading"}},"on":{}}, handlers: {'7-21': {"input": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleInputChange($event)
+      })();
+    
+  }, "blur": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleInputBlur($event)
+      })();
+    
+  }},'7-23': {"tap": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleSearchBtnClick($event)
+      })();
+    
+  }}}, models: {'7': {
+      type: "input",
+      expr: "inputVal",
+      handler: function set ($v) {
+      var _vm=this;
+        _vm.inputVal = $v;
+      
+    }
+    }} }, {info: {"components":{"van-search":{"path":"vant-weapp\\search\\index"},"baseloading":{"path":"base-loading"}},"on":{}}, handlers: {'7-21': {"input": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleInputChange($event)
+      })();
+    
+  }, "blur": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleInputBlur($event)
+      })();
+    
+  }},'7-23': {"tap": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleSearchBtnClick($event)
+      })();
+    
+  }}}, models: {'7': {
+      type: "input",
+      expr: "inputVal",
+      handler: function set ($v) {
+      var _vm=this;
+        _vm.inputVal = $v;
+      
+    }
+    }} }, {info: {"components":{"van-search":{"path":"vant-weapp\\search\\index"},"baseloading":{"path":"base-loading"}},"on":{}}, handlers: {'7-21': {"input": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleInputChange($event)
+      })();
+    
+  }, "blur": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleInputBlur($event)
+      })();
+    
+  }},'7-23': {"tap": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleSearchBtnClick($event)
+      })();
+    
+  }}}, models: {'7': {
+      type: "input",
+      expr: "inputVal",
+      handler: function set ($v) {
+      var _vm=this;
+        _vm.inputVal = $v;
+      
+    }
+    }} }, {info: {"components":{"van-search":{"path":"vant-weapp\\search\\index"},"baseloading":{"path":"base-loading"}},"on":{}}, handlers: {'7-21': {"input": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleInputChange($event)
+      })();
+    
+  }, "blur": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleInputBlur($event)
+      })();
+    
+  }},'7-23': {"tap": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleSearchBtnClick($event)
+      })();
+    
+  }}}, models: {'7': {
+      type: "input",
+      expr: "inputVal",
+      handler: function set ($v) {
+      var _vm=this;
+        _vm.inputVal = $v;
+      
+    }
+    }} }, {info: {"components":{"van-search":{"path":"vant-weapp\\search\\index"},"baseloading":{"path":"base-loading"}},"on":{}}, handlers: {'7-21': {"input": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleInputChange($event)
+      })();
+    
+  }, "blur": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleInputBlur($event)
+      })();
+    
+  }},'7-23': {"tap": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleSearchBtnClick($event)
+      })();
+    
+  }}}, models: {'7': {
+      type: "input",
+      expr: "inputVal",
+      handler: function set ($v) {
+      var _vm=this;
+        _vm.inputVal = $v;
+      
+    }
+    }} }, {info: {"components":{"van-search":{"path":"vant-weapp\\search\\index"},"baseloading":{"path":"base-loading"}},"on":{}}, handlers: {'7-21': {"input": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleInputChange($event)
+      })();
+    
+  }, "blur": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleInputBlur($event)
+      })();
+    
+  }},'7-23': {"tap": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleSearchBtnClick($event)
+      })();
+    
+  }}}, models: {'7': {
+      type: "input",
+      expr: "inputVal",
+      handler: function set ($v) {
+      var _vm=this;
+        _vm.inputVal = $v;
+      
+    }
+    }} }, {info: {"components":{"van-search":{"path":"vant-weapp\\search\\index"},"baseloading":{"path":"base-loading"}},"on":{}}, handlers: {'7-21': {"input": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleInputChange($event)
+      })();
+    
+  }, "blur": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleInputBlur($event)
+      })();
+    
+  }},'7-23': {"tap": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleSearchBtnClick($event)
+      })();
+    
+  }}}, models: {'7': {
+      type: "input",
+      expr: "inputVal",
+      handler: function set ($v) {
+      var _vm=this;
+        _vm.inputVal = $v;
+      
+    }
+    }} }, {info: {"components":{"van-search":{"path":"vant-weapp\\search\\index"},"baseloading":{"path":"base-loading"}},"on":{}}, handlers: {'7-21': {"input": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleInputChange($event)
+      })();
+    
+  }, "blur": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleInputBlur($event)
+      })();
+    
+  }},'7-23': {"tap": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleSearchBtnClick($event)
+      })();
+    
+  }}}, models: {'7': {
+      type: "input",
+      expr: "inputVal",
+      handler: function set ($v) {
+      var _vm=this;
+        _vm.inputVal = $v;
+      
+    }
+    }} }, {info: {"components":{"van-search":{"path":"vant-weapp\\search\\index"},"baseloading":{"path":"base-loading"}},"on":{}}, handlers: {'7-21': {"input": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleInputChange($event)
+      })();
+    
+  }, "blur": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleInputBlur($event)
+      })();
+    
+  }},'7-23': {"tap": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleSearchBtnClick($event)
+      })();
+    
+  }}}, models: {'7': {
+      type: "input",
+      expr: "inputVal",
+      handler: function set ($v) {
+      var _vm=this;
+        _vm.inputVal = $v;
+      
+    }
+    }} }, {info: {"components":{"van-search":{"path":"vant-weapp\\search\\index"},"baseloading":{"path":"base-loading"}},"on":{}}, handlers: {'7-21': {"input": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleInputChange($event)
+      })();
+    
+  }, "blur": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleInputBlur($event)
+      })();
+    
+  }},'7-23': {"tap": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleSearchBtnClick($event)
+      })();
+    
+  }}}, models: {'7': {
+      type: "input",
+      expr: "inputVal",
+      handler: function set ($v) {
+      var _vm=this;
+        _vm.inputVal = $v;
+      
+    }
+    }} }, {info: {"components":{"van-search":{"path":"vant-weapp\\search\\index"},"baseloading":{"path":"base-loading"}},"on":{}}, handlers: {'7-21': {"input": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleInputChange($event)
+      })();
+    
+  }, "blur": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleInputBlur($event)
+      })();
+    
+  }},'7-23': {"tap": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleSearchBtnClick($event)
+      })();
+    
+  }}}, models: {'7': {
+      type: "input",
+      expr: "inputVal",
+      handler: function set ($v) {
+      var _vm=this;
+        _vm.inputVal = $v;
+      
+    }
+    }} }, {info: {"components":{"van-search":{"path":"vant-weapp\\search\\index"},"baseloading":{"path":"base-loading"}},"on":{}}, handlers: {'7-21': {"input": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleInputChange($event)
+      })();
+    
+  }, "blur": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleInputBlur($event)
+      })();
+    
+  }},'7-23': {"tap": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleSearchBtnClick($event)
+      })();
+    
+  }}}, models: {'7': {
+      type: "input",
+      expr: "inputVal",
+      handler: function set ($v) {
+      var _vm=this;
+        _vm.inputVal = $v;
+      
+    }
+    }} }, {info: {"components":{"van-search":{"path":"vant-weapp\\search\\index"},"baseloading":{"path":"base-loading"}},"on":{}}, handlers: {'7-21': {"input": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleInputChange($event)
+      })();
+    
+  }, "blur": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleInputBlur($event)
+      })();
+    
+  }},'7-23': {"tap": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleSearchBtnClick($event)
+      })();
+    
+  }}}, models: {'7': {
+      type: "input",
+      expr: "inputVal",
+      handler: function set ($v) {
+      var _vm=this;
+        _vm.inputVal = $v;
+      
+    }
+    }} }, {info: {"components":{"van-search":{"path":"vant-weapp\\search\\index"},"baseloading":{"path":"base-loading"}},"on":{}}, handlers: {'7-21': {"input": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleInputChange($event)
+      })();
+    
+  }, "blur": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleInputBlur($event)
+      })();
+    
+  }},'7-23': {"tap": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleSearchBtnClick($event)
+      })();
+    
+  }}}, models: {'7': {
+      type: "input",
+      expr: "inputVal",
+      handler: function set ($v) {
+      var _vm=this;
+        _vm.inputVal = $v;
+      
+    }
+    }} }, {info: {"components":{"van-search":{"path":"vant-weapp\\search\\index"},"baseloading":{"path":"base-loading"}},"on":{}}, handlers: {'7-21': {"input": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleInputChange($event)
+      })();
+    
+  }, "blur": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleInputBlur($event)
+      })();
+    
+  }},'7-23': {"tap": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleSearchBtnClick($event)
+      })();
+    
+  }}}, models: {'7': {
       type: "input",
       expr: "inputVal",
       handler: function set ($v) {

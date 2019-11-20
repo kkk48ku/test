@@ -1,0 +1,4 @@
+
+<view wx:if="{{ loading }}" class="base-loading-container">
+  加载中...
+</view>

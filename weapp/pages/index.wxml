@@ -1,4 +1,6 @@
 
 <view class="container">
-  <basesearch bind_init="_initComponent" label="{{ '测试' }}" actionBtn="{{ '搜索' }}" inputVal="{{ inputVal }}" data-wpy-evt="5-61" bindinputChange="_proxy"></basesearch>
+  <basesearch bind_init="_initComponent" label="{{ '测试' }}" actionBtn="{{ '搜索' }}" inputVal="{{ inputVal }}" data-wpy-evt="3-26" bindinputChange="_proxy"></basesearch>
+  <basenoticebar bind_init="_initComponent" text="{{ notice }}"></basenoticebar>
+  <baseswiper bind_init="_initComponent" swipersetting="{{ swipersetting }}"></baseswiper>
 </view>

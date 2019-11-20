@@ -1,11 +1,30 @@
 <template>
-  <div>
+  <div class="base-loading-container" v-if="loading">
     加载中...
   </div>
 </template>
 
 <script>
-  export default {}
+import wepy from '@wepy/core'
+wepy.component({
+  props: {
+    loading: Boolean
+  }
+})
 </script>
 
-<style></style>
+<style lang="less" scoped>
+.base-loading-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%;-50%);
+  width: 100px;
+  height: 35px;
+  line-height: 35px;
+  text-align: center;
+  background: #ccc;
+  color: red;
+  border-radius: 3px;
+}
+</style>

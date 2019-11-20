@@ -1,19 +1,19 @@
 <style lang="less"></style>
 
 <script>
-  import wepy from '@wepy/core'
-  import eventHub from './common/eventHub'
+import wepy from '@wepy/core'
+// import eventHub from './common/eventHub'
 
-  wepy.app({
-    hooks: {},
-    globalData: {
-      userInfo: null
-    },
+wepy.app({
+  hooks: {},
+  globalData: {
+    userInfo: null
+  },
 
-    onLaunch() {},
+  onLaunch() {},
 
-    methods: {}
-  })
+  methods: {}
+})
 </script>
 <config>
 {
@@ -31,19 +31,26 @@
     "tabBar": {
         "color": "#cccccc",
         "selectedColor": "#ff0000",
-        "list": [{
-                "pagePath": "pages/index",
-                "text": "首页"
-            },
-            {
-                "pagePath": "pages/course",
-                "text": "课程"
-            },
-            {
-                "pagePath": "pages/mine",
-                "text": "个人"
-            }
-        ]
+        list: [
+        {
+          pagePath: "pages/index",
+          text: "首页",
+          iconPath: "images/index.png",
+          selectedIconPath: "images/index-active.png"
+        },
+        {
+          pagePath: "pages/course",
+          text: "课程",
+          iconPath: "images/course.png",
+          selectedIconPath: "images/course-active.png"
+        },
+        {
+          pagePath: "pages/mine",
+          text: "个人",
+          iconPath: "images/mine.png",
+          selectedIconPath: "images/mine-active.png"
+        }
+      ]
     }
 }
 
