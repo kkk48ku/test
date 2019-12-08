@@ -1,0 +1,7 @@
+
+<view class="container">
+  <view class="col-list">
+    <basegoods bind_init="_initComponent"></basegoods>
+  </view>
+  <van-toast id="toast"></van-toast>
+</view>

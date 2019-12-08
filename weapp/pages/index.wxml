@@ -1,6 +1,11 @@
 
 <view class="container">
-  <basesearch bind_init="_initComponent" label="{{ '测试' }}" actionBtn="{{ '搜索' }}" inputVal="{{ inputVal }}" data-wpy-evt="3-26" bindinputChange="_proxy"></basesearch>
-  <basenoticebar bind_init="_initComponent" text="{{ notice }}"></basenoticebar>
+  <view data-wpy-evt="2-3" bindtap="_proxy" class="search-model">
+    <label class="search-input">请输入要搜索的课程或老师</label>
+    <label class="search-text">搜索</label>
+  </view>
+  
   <baseswiper bind_init="_initComponent" swipersetting="{{ swipersetting }}"></baseswiper>
+  <basenav bind_init="_initComponent"></basenav>
+  <basegoods bind_init="_initComponent" imageURL="{{ imageURL }}"></basegoods>
 </view>

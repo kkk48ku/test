@@ -2,10 +2,11 @@
 <view class="base-search-container">
   <view class="search-wrapper">
     <label for="baseSearch" wx:if="{{ label }}"></label>
-    <input id="baseSearch" placeholder="请输入搜索关键词" type="text" value="{{ inputVal }}" bindinput="_proxy" data-model-id="7" data-wpy-evt="7-21" bindblur="_proxy"></input>
+    <input id="baseSearch" value="{{ inputVal }}" bindinput="_proxy" data-model-id="0" placeholder="请输入要搜索的课程或老师" type="text" focus data-wpy-evt="10-0"></input>
   </view>
-  <label data-wpy-evt="7-23" bindtap="_proxy" class="action-btn">{{
-    actionBtn
-  }}</label>
-  <baseloading bind_init="_initComponent" loading="{{ loading }}">加载中...</baseloading>
+  <label wx:if="{{ !searchResultList }}" data-wpy-evt="10-1" bindtap="_proxy" class="action-btn">{{ actionBtn }}</label>
+  <label wx:else data-wpy-evt="10-2" bindtap="_proxy" class="action-btn">
+    <van-icon bind_init="_initComponent" name="cross" size="18px"></van-icon>
+  </label>
+  <baseloading bind_init="_initComponent" loading="{{ loading }}" loadingText="{{ '加载中' }}"></baseloading>
 </view>

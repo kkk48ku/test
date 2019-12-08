@@ -1,6 +1,6 @@
 "use strict";
 
-var _core = _interopRequireDefault(require('../vendor.js')(0));
+var _core = _interopRequireDefault(require('./../vendor.js')(0));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -8,8 +8,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 // import testMixin from '../mixins/test'
 _core["default"].page({
   data: {
-    inputVal: '',
-    notice: '足协杯战线连续第2年上演广州德比战，上赛季半决赛上恒大以两回合5-3的总比分淘汰富力。',
+    notice: '全部课程打五折~~~',
     swipersetting: {
       swiperGroup: [{
         id: 1
@@ -25,31 +24,50 @@ _core["default"].page({
       interval: 2000,
       duration: 500,
       circular: true
-    }
+    },
+    imageURL: 'https://tva1.sinaimg.cn/large/006tNbRwgy1g9knjrijc3j30u00vj0tc.jpg'
   },
   methods: {
-    handleInput: function handleInput(e) {
-      console.log(e);
-    },
-    onSearch: function onSearch(e) {
-      console.log(e);
-    },
-    handleInputChange: function handleInputChange(val) {
-      this.inputVal = val;
+    // 点击搜索框跳转搜索界面
+    handleSearchClick: function handleSearchClick() {
+      this.$navigate({
+        url: 'search'
+      });
     }
   }
-}, {info: {"components":{"basesearch":{"path":"..\\components\\base-search"},"basenoticebar":{"path":"..\\components\\base-notice-bar"},"baseswiper":{"path":"..\\components\\base-swiper"}},"on":{"3-26":["inputChange"]}}, handlers: {'3-26': {"inputChange": function proxy () {
+}, {info: {"components":{"baseswiper":{"path":"../components/base-swiper"},"basenoticebar":{"path":"../components/base-notice-bar"},"basenav":{"path":"../components/base-nav"},"basegoods":{"path":"../components/base-goods"}},"on":{}}, handlers: {'2-3': {"tap": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
-        _vm.handleInputChange($event)
+        _vm.handleSearchClick($event);
       })();
     
-  }}}, models: {} }, {info: {"components":{"basesearch":{"path":"..\\components\\base-search"},"basenoticebar":{"path":"..\\components\\base-notice-bar"},"baseswiper":{"path":"..\\components\\base-swiper"}},"on":{"3-26":["inputChange"]}}, handlers: {'3-26': {"inputChange": function proxy () {
+  }}}, models: {}, refs: undefined }, {info: {"components":{"baseswiper":{"path":"../components/base-swiper"},"basenoticebar":{"path":"../components/base-notice-bar"},"basenav":{"path":"../components/base-nav"},"basegoods":{"path":"../components/base-goods"}},"on":{}}, handlers: {'2-3': {"tap": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {
-        _vm.handleInputChange($event)
+        _vm.handleSearchClick($event);
       })();
     
-  }}}, models: {} });
+  }}}, models: {}, refs: undefined }, {info: {"components":{"baseswiper":{"path":"../components/base-swiper"},"basenoticebar":{"path":"../components/base-notice-bar"},"basenav":{"path":"../components/base-nav"},"basegoods":{"path":"../components/base-goods"}},"on":{}}, handlers: {'2-3': {"tap": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleSearchClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"baseswiper":{"path":"../components/base-swiper"},"basenoticebar":{"path":"../components/base-notice-bar"},"basenav":{"path":"../components/base-nav"},"basegoods":{"path":"../components/base-goods"}},"on":{}}, handlers: {'2-3': {"tap": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleSearchClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined }, {info: {"components":{"baseswiper":{"path":"../components/base-swiper"},"basenoticebar":{"path":"../components/base-notice-bar"},"basenav":{"path":"../components/base-nav"},"basegoods":{"path":"../components/base-goods"}},"on":{}}, handlers: {'2-3': {"tap": function proxy () {
+    var $event = arguments[arguments.length - 1];
+    var _vm=this;
+      return (function () {
+        _vm.handleSearchClick($event);
+      })();
+    
+  }}}, models: {}, refs: undefined });

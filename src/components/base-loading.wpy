@@ -1,30 +1,50 @@
 <template>
   <div class="base-loading-container" v-if="loading">
-    加载中...
+    <van-loading class="base-loading" color="#ffffff" size="20px">
+      <span class="loading-text">
+        {{loadingText}}
+      </span>
+    </van-loading>
   </div>
 </template>
 
 <script>
-import wepy from '@wepy/core'
-wepy.component({
-  props: {
-    loading: Boolean
-  }
-})
+  import wepy from '@wepy/core'
+  wepy.component({
+    props: {
+      loading: Boolean,
+      loadingText: String
+    }
+  })
 </script>
 
 <style lang="less" scoped>
-.base-loading-container {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%;-50%);
-  width: 100px;
-  height: 35px;
-  line-height: 35px;
-  text-align: center;
-  background: #ccc;
-  color: red;
-  border-radius: 3px;
-}
+  .base-loading-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 35px;
+    text-align: center;
+    background: #ccc;
+    border-radius: 5px;
+    z-index: 200;
+    .base-loading {
+      .loading-text{
+        color: #fff;
+      }
+    }
+  }
 </style>
+
+<config>
+{
+    usingComponents: {
+      "van-loading":"./vant-weapp/loading/index"
+    }
+}
+</config>

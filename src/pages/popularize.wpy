@@ -1,0 +1,161 @@
+<template>
+  <div class="container">
+    <div class="top-img-container">
+      <img class="top-img" src="../images/top.jpeg" alt="">
+    </div>
+    <van-toast id="toast" />
+    <div class="bottom-bar">
+      <van-tabs>
+        <van-tab title="推广中心">
+          <div class="tab-one-container">
+            <div class="tab-one-item van-hairline--bottom" v-for="(iitem, index) of 4" :key="index">
+              <div class="left-bar">
+                <img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9knjrijc3j30u00vj0tc.jpg" alt="" class="img">
+              </div>
+              <div class="right-bar">
+                <div class="title">课程标题</div>
+                <div class="price-container">
+                  <span class="lower-price">限时优惠 <span class="price">￥49.00</span></span>
+                  <span class="high-price">原价 <span class="price">￥68.00</span></span>
+                </div>
+                <div class="bottom">
+                  <div class="left-bar">
+                    成功邀请得9.2元
+                  </div>
+                  <div class="right-bar">
+                    去分享
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </van-tab>
+        <van-tab title="我的收益">
+          <van-cell-group>
+            <van-cell title="可提现金额" value="￥0" />
+            <van-collapse value="1" accordion>
+              <van-collapse-item title="提现记录" name="1">
+                暂无提现记录
+              </van-collapse-item>
+            </van-collapse>
+          </van-cell-group>
+        </van-tab>
+      </van-tabs>
+    </div>
+  </div>
+</template>
+
+<script>
+  import wepy from '@wepy/core'
+  import Toast from '../components/vant-weapp/toast/toast'
+  wepy.page({
+    data: {
+      message: ''
+    },
+    methods: {
+      handleComment() {
+        Toast.success({
+          selector: '#toast',
+          message: '发布成功！'
+        })
+      }
+    }
+  })
+</script>
+
+<style lang="less">
+  #toast {
+    text-align: center;
+  }
+  .container {
+    .top-img-container {
+      height: 150px;
+    }
+    .top-img {
+      height: 150px;
+    }
+    .bottom-bar {
+      .tab-one-container {
+        padding: 10px 30px;
+        .tab-one-item {
+          padding: 10px 0;
+          display: flex;
+          align-items: center;
+          &>.left-bar {
+            margin-right: 10px;
+            .img {
+              width: 60px;
+              height: 90px;
+            }
+          }
+          &>.right-bar {
+            .title {
+              color: #333;
+              font-size: 16px;
+              letter-spacing: .2px;
+              margin-bottom: 5px;
+            }
+            .price-container {
+              display: flex;
+              justify-content: center;
+              .lower-price,
+              .high-price {
+                font-size: 14px;
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                .price {
+                  font-size: 12px;
+                  line-height: 20px;
+                }
+              }
+              .lower-price {
+                color: red;
+                font-weight: 600;
+                margin-right: 15px;
+              }
+              .high-price {
+                color: #999;
+                font-weight: 400;
+                .price {
+                  text-decoration: line-through;
+                }
+              }
+            }
+            .bottom {
+              margin-top: 10px;
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              font-size: 12px;
+              &>.left-bar {
+                color: #ff976a;
+              }
+              &>.right-bar {
+                background: #ff976a;
+                color: #fff;
+                padding: 3px 6px;
+                border-radius: 20px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+</style>
+
+<config>
+{
+    navigationBarTitleText: '推广中心',
+    "usingComponents": {
+      "van-tab": "../components/vant-weapp/tab/index",
+      "van-tabs": "../components/vant-weapp/tabs/index",
+      "van-toast": "../components/vant-weapp/toast/index",
+      "van-cell": "../components/vant-weapp/cell/index",
+      "van-cell-group": "../components/vant-weapp/cell-group/index",
+      "van-collapse": "../components/vant-weapp/collapse/index",
+      "van-collapse-item": "../components/vant-weapp/collapse-item/index"
+    }
+}
+</config>

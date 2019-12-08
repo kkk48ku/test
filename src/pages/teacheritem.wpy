@@ -1,0 +1,112 @@
+<template>
+  <div class="container">
+    <div class="top-bar">
+      <div class="teacher-img-container">
+        <img class="teacher-img" src="../images/avatar.jpg" alt="">
+      </div>
+      <div class="name">黄老师</div>
+    </div>
+    <van-tabs :animated="true">
+      <van-tab title-style="font-size:12px;" title="主讲课程">
+        <div class="course-list">
+          <div @click="handleCourseItemClick" class="course-item" v-for="(item, index) of 4" :key="index">
+            <div class="img-container">
+              <img src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9knjrijc3j30u00vj0tc.jpg" alt="" class="img">
+            </div>
+            <div class="right-bar">
+              <div class="title">这是课程标题这是课程标题这是课程标题</div>
+              <div class="price">¥248</div>
+            </div>
+          </div>
+        </div>
+      </van-tab>
+      <van-tab title-style="font-size:12px;" title="详细介绍">
+        <div class="desc-container">
+          黄老师是测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试
+        </div>
+      </van-tab>
+    </van-tabs>
+  </div>
+</template>
+
+<script>
+  import wepy from '@wepy/core'
+  wepy.page({
+    methods: {
+      handleCourseItemClick() {
+        this.$navigate({
+          url: 'courseitem'
+        })
+      }
+    }
+  })
+</script>
+
+<style lang="less">
+  .container {
+    .top-bar {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      height: 150px;
+      .teacher-img {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+      }
+    }
+    .course-list {
+      padding: 15px 20px 40px 20px;
+      background: #f7f7f7;
+      .course-item {
+        background: #fff;
+        padding: 10px;
+        margin-bottom: 20px;
+        box-shadow: 0 8px 12px #ebedf0;
+        display: flex;
+        align-items: center;
+        .img {
+          width: 60px;
+          height: 80px;
+        }
+        .right-bar {
+          margin-left: 20px;
+          .title {
+            font-size: 12px;
+            color: #333;
+            font-weight: 400;
+          }
+          .price{
+            margin-top: 15px;
+            font-size: 11px;
+            color: red;
+          }
+        }
+      }
+    }
+    .desc-container{
+      padding: 15px 20px;
+      text-indent: 2em;
+      font-size: 12px;
+      letter-spacing: .5px;
+      color:#333;
+      font-weight: 400;
+      line-height: 25px;
+    }
+  }
+</style>
+
+<config>
+{
+    navigationBarTitleText: '讲师详情',
+    "usingComponents": {
+      "van-tab": "../components/vant-weapp/tab/index",
+      "van-tabs": "../components/vant-weapp/tabs/index",
+      "van-rate": "../components/vant-weapp/rate/index",
+      "van-button": "../components/vant-weapp/button/index",
+      "van-tag": "../components/vant-weapp/tag/index",
+      "van-icon": "../components/vant-weapp/icon/index"
+    }
+}
+</config>

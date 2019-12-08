@@ -1,0 +1,71 @@
+<template>
+  <div class="container">
+    <van-field class="comment" value="{{ message }}" type="textarea" placeholder="请输入评论内容" autosize border="{{ false }}" />
+    <van-cell-group class="btn-conatiner">
+      <van-cell :border="false">
+        <van-rate custom-class="rate" value="{{ value }}"/>
+        <van-button @click="handleComment" custom-class="btn" type="info">发布</van-button>
+      </van-cell>
+    </van-cell-group>
+    <van-toast id="toast" />
+  </div>
+</template>
+
+<script>
+  import wepy from '@wepy/core'
+  import Toast from '../components/vant-weapp/toast/toast'
+  wepy.page({
+    data: {
+      message: ''
+    },
+    methods: {
+      handleComment() {
+        Toast.success({
+          selector: '#toast',
+          message: '发布成功！'
+        })
+      }
+    }
+  })
+</script>
+
+<style lang="less">
+  #toast {
+    text-align: center;
+  }
+  .container {
+    .comment{
+      min-height: 400px;
+    }
+    .btn-conatiner {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 40px;
+      padding: 10px;
+      .rate{
+        padding-top: 3px;
+        float: left;
+      }
+      .btn{
+        width: 60px;
+        height: 30px;
+      }
+    }
+  }
+</style>
+
+<config>
+{
+    navigationBarTitleText: '写评论',
+    "usingComponents": {
+      "van-field": "../components/vant-weapp/field/index",
+      "van-toast": "../components/vant-weapp/toast/index",
+      "van-cell": "../components/vant-weapp/cell/index",
+      "van-cell-group": "../components/vant-weapp/cell-group/index",
+      "van-button": "../components/vant-weapp/button/index",
+      "van-rate": "../components/vant-weapp/rate/index"
+    }
+}
+</config>

@@ -1,0 +1,45 @@
+
+<view class="container">
+  <view class="top-img-container">
+    <image src="../images/top.jpeg" alt class="top-img">
+  </image></view>
+  <van-toast bind_init="_initComponent" id="toast"></van-toast>
+  <view class="bottom-bar">
+    <van-tabs bind_init="_initComponent">
+      <van-tab bind_init="_initComponent" title="推广中心">
+        <view class="tab-one-container">
+          <view wx:for="{{ 4 }}" wx:for-index="index" wx:for-item="iitem" wx:key="index" key="{{ index }}" class="tab-one-item van-hairline--bottom">
+            <view class="left-bar">
+              <image src="https://tva1.sinaimg.cn/large/006tNbRwgy1g9knjrijc3j30u00vj0tc.jpg" alt class="img">
+            </image></view>
+            <view class="right-bar">
+              <view class="title">课程标题</view>
+              <view class="price-container">
+                <label class="lower-price">限时优惠 <label class="price">￥49.00</label></label>
+                <label class="high-price">原价 <label class="price">￥68.00</label></label>
+              </view>
+              <view class="bottom">
+                <view class="left-bar">
+                  成功邀请得9.2元
+                </view>
+                <view class="right-bar">
+                  去分享
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </van-tab>
+      <van-tab bind_init="_initComponent" title="我的收益">
+        <van-cell-group bind_init="_initComponent">
+          <van-cell bind_init="_initComponent" title="可提现金额" value="￥0"></van-cell>
+          <van-collapse bind_init="_initComponent" value="1" accordion>
+            <van-collapse-item bind_init="_initComponent" title="提现记录" name="1">
+              暂无提现记录
+            </van-collapse-item>
+          </van-collapse>
+        </van-cell-group>
+      </van-tab>
+    </van-tabs>
+  </view>
+</view>

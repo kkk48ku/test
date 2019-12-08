@@ -5,7 +5,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.observe = observe;
 
-var _behavior = require('behavior.js');
+var _behavior = require('./behavior.js');
 
 function observe(vantOptions, options) {
   var watch = vantOptions.watch;

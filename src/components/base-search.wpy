@@ -4,19 +4,21 @@
       <label for="baseSearch" v-if="label"></label>
       <input
         id="baseSearch"
-        placeholder="请输入搜索关键词"
-        type="text"
         v-model="inputVal"
         @input="handleInputChange"
-        @blur="handleInputBlur"
+        placeholder="请输入要搜索的课程或老师"
+        type="text"
+        focus
       />
     </div>
-    <span class="action-btn" @click="handleSearchBtnClick">{{
-      actionBtn
-    }}</span>
-    <baseloading :loading="loading">加载中...</baseloading>
+    <span class="action-btn" @click="handleSearchBtnClick" v-if="!searchResultList">{{ actionBtn }}</span>
+    <span class="action-btn" v-else @click="handleCloseClick">
+      <van-icon name="cross" size="18px" />
+    </span>
+    <baseloading :loading="loading" :loadingText="'加载中'" />
   </div>
 </template>
+
 <style lang="less" scoped>
 .van-search {
   display: block;
@@ -58,6 +60,7 @@
   }
 }
 </style>
+
 <script>
 import wepy from '@wepy/core'
 import { debounce } from '../utils/util.js'
@@ -65,48 +68,95 @@ wepy.component({
   props: {
     label: String,
     inputVal: String,
-    actionBtn: String
+    actionBtn: String,
+    searchResultList: Array
   },
   watch: {
     loading(val) {
-      console.log(val)
+      // console.log(val)
+    },
+    inputVal(val, oldVal) {
+      if (val === '') {
+        this.$emit('handleResultHide')
+      } else if (val !== oldVal) {
+        this.debounceHandleInputValChange()
+      }
     }
+  },
+  created() {
+    this.debounceHandleInputValChange = debounce(this.searchAjax, 300)
   },
   data: {
     loading: false
   },
   methods: {
+    // 处理输入事件实现双向绑定
     handleInputChange(e) {
-      debounce(this.searchAjax, 200)
       const val = e.$wx.detail.value
       this.inputVal = val
       this.$emit('inputChange', val)
     },
-    handleInputBlur(e) {
-      this.searchAjax()
-    },
+    // 处理点击搜索按钮函数
     handleSearchBtnClick(e) {
-      this.searchAjax()
+      debounce(this.searchAjax, 300)
     },
+    // 处理点击清除按钮函数
+    handleCloseClick() {
+      this.$emit('inputChange', '')
+    },
+    // 发送异步搜索函数
     searchAjax() {
+      if (!this.inputVal) return
+      console.log('搜索')
+      // const data = [
+      //   {
+      //     id: 1,
+      //     content: '猫和老鼠'
+      //   },
+      //   {
+      //     id: 2,
+      //     content: '猫和老鼠'
+      //   },
+      //   {
+      //     id: 3,
+      //     content: '猫和老鼠'
+      //   },
+      //   {
+      //     id: 4,
+      //     content: '猫和老鼠'
+      //   },
+      //   {
+      //     id: 5,
+      //     content: '猫和老鼠'
+      //   },
+      //   {
+      //     id: 6,
+      //     content: '猫和老鼠'
+      //   }
+      // ]
+      const data = []
       if (!this.loading) {
         this.loading = true
         setTimeout(() => {
-          console.log('发送请求')
           this.loading = false
-        }, 3000)
+          this.handleSearchData(data)
+        }, 2000)
       }
     },
-    searchDatahandle(data) {}
+    // 处理搜索结果函数
+    handleSearchData(data) {
+      this.$emit('handleSearchData', data)
+    }
   }
 })
 </script>
+
 <config>
 {
-    navigationBarTitleText: '首页',
     usingComponents: {
       "van-search": "./vant-weapp/search/index",
-      "baseloading":"./base-loading"
+      "van-icon": "./vant-weapp/icon/index",
+      "baseloading":"./base-loading",
     }
 }
 </config>

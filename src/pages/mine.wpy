@@ -1,18 +1,122 @@
 <template>
   <div class="container">
-    学员中心
+    <div class="personal-data">
+      <div class="avatar-container">
+        <img class="avatar" src="../images/avatar.jpg" alt="">
+      </div>
+      <div class="username">Bovine</div>
+    </div>
+    <ul class="operation-list">
+      <li @click="handleAccountChangeClick" class="ope-item van-hairline--bottom">
+        <van-icon class="icon" name="friends-o" />
+        <span>资料修改</span>
+        <van-icon name="arrow" />
+      </li>
+      <li @click="handlePopularizeClick" class="ope-item van-hairline--bottom">
+        <van-icon class="icon" name="coupon-o" />
+        <span>我的推广</span>
+        <van-icon name="arrow" />
+      </li>
+      <li @click="handleCourseClick" class="ope-item van-hairline--bottom">
+        <van-icon class="icon" name="shopping-cart-o" />
+        <span>我的课程</span>
+        <van-icon name="arrow" />
+      </li>
+      <li @click="handleCollectionsClick" class="ope-item van-hairline--bottom">
+        <van-icon class="icon" name="label-o" />
+        <span>收藏列表</span>
+        <van-icon name="arrow" />
+      </li>
+      <li class="ope-item">
+        <van-icon class="icon" name="phone-circle-o" />
+        <span @click="handleSchoolClick">校长办公室</span>
+        <van-icon name="arrow" />
+      </li>
+    </ul>
   </div>
 </template>
 
 <script>
   import wepy from '@wepy/core'
-
-  wepy.page({})
+  wepy.page({
+    methods: {
+      handleAccountChangeClick() {
+        this.$navigate({
+          url: 'account'
+        })
+      },
+      handleSchoolClick() {
+        this.$navigate({
+          url: 'school'
+        })
+      },
+      handlePopularizeClick() {
+        this.$navigate({
+          url: 'popularize'
+        })
+      },
+      handleCollectionsClick() {
+        this.$navigate({
+          url: 'collections'
+        })
+      },
+      handleCourseClick() {
+        this.$navigate({
+          url: 'mycourse'
+        })
+      }
+    }
+  })
 </script>
 
-<style lang="less"></style>
+<style lang="less" scoped>
+  .container {
+    .personal-data {
+      box-sizing: border-box;
+      height: 150px;
+      padding: 30px 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border-bottom: 5px solid #ccc;
+      .avatar-container {
+        .avatar {
+          width: 60px;
+          height: 60px;
+          border-radius: 50%;
+          overflow: hidden;
+        }
+      }
+      .username {
+        font-size: 16px;
+        letter-spacing: .2px;
+      }
+    }
+    .operation-list {
+      .ope-item {
+        .icon {
+          font-size: 20px;
+          margin-right: 10px;
+        }
+        display: flex;
+        align-items: center;
+        height: 60px;
+        line-height: 60px;
+        padding: 0 10px;
+        &>label {
+          flex: 1 1;
+          font-size: 14px;
+        }
+      }
+    }
+  }
+</style>
+
 <config>
 {
-    navigationBarTitleText: '学员中心'
+    navigationBarTitleText: '学员中心',
+    usingComponents: {
+      "van-icon": "../components/vant-weapp/icon/index",
+    }
 }
 </config>

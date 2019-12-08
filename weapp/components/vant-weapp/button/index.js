@@ -1,10 +1,10 @@
 "use strict";
 
-var _component = require('../common/component.js');
+var _component = require('./../common/component.js');
 
-var _button = require('../mixins/button.js');
+var _button = require('./../mixins/button.js');
 
-var _openType = require('../mixins/open-type.js');
+var _openType = require('./../mixins/open-type.js');
 
 (0, _component.VantComponent)({
   mixins: [_button.button, _openType.openType],

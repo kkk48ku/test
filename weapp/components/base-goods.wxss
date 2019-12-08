@@ -1,0 +1,17 @@
+.goods-container {
+  background: #f7f8fa;
+}
+.goods-container .goods-wrapper {
+  padding-top: 10px;
+}
+.goods-container .goods-wrapper .van-card {
+  background: #fff;
+  border-bottom: 10px solid #f7f8fa;
+}
+.goods-container .goods-wrapper .van-card .tags {
+  margin: 3px 0;
+}
+.goods-container .goods-wrapper .van-card .tags .tag {
+  margin-right: 10px;
+}
+

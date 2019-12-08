@@ -1,4 +1,8 @@
 
 <view wx:if="{{ loading }}" class="base-loading-container">
-  加载中...
+  <van-loading bind_init="_initComponent" color="#ffffff" size="20px" class="base-loading">
+    <label class="loading-text">
+      {{loadingText}}
+    </label>
+  </van-loading>
 </view>

@@ -1,8 +1,8 @@
 "use strict";
 
-var _link = require('../mixins/link.js');
+var _link = require('./../mixins/link.js');
 
-var _component = require('../common/component.js');
+var _component = require('./../common/component.js');
 
 (0, _component.VantComponent)({
   classes: ['title-class', 'label-class', 'value-class', 'right-icon-class', 'hover-class'],

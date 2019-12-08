@@ -5,9 +5,9 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.VantComponent = VantComponent;
 
-var _basic = require('../mixins/basic.js');
+var _basic = require('./../mixins/basic.js');
 
-var _index = require('../mixins/observer/index.js');
+var _index = require('./../mixins/observer/index.js');
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 

@@ -1,8 +1,8 @@
 "use strict";
 
-var _component = require('../common/component.js');
+var _component = require('./../common/component.js');
 
-var _utils = require('../common/utils.js');
+var _utils = require('./../common/utils.js');
 
 (0, _component.VantComponent)({
   props: {

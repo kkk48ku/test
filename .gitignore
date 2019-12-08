@@ -3,3 +3,6 @@ dist
 .DS_Store
 /vant-weapp
 /src/components/vant-weapp
+
+/package-lock.json
+/yarn-lock.json

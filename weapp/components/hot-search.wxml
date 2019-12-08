@@ -1,0 +1,7 @@
+
+<view class="hot-search-container">
+  <view class="hot-search-title">🔥热搜推荐</view>
+  <view class="search-item-container">
+    <van-tag bind_init="_initComponent" wx:for="{{ hotSearchList }}" wx:for-index="index" wx:for-item="item" wx:key="index" key="{{ index }}" plain type="danger" data-wpy-evt="11-0" bindtap="_proxy" data-wpytap-a="{{ item }}" class="search-item">{{item}}</van-tag>
+  </view>
+</view>

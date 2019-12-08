@@ -1,4 +1,36 @@
 
 <view class="container">
-  学员中心
+  <view class="personal-data">
+    <view class="avatar-container">
+      <image src="../images/avatar.jpg" alt class="avatar">
+    </image></view>
+    <view class="username">Bovine</view>
+  </view>
+  <view class="operation-list">
+    <view data-wpy-evt="4-41" bindtap="_proxy" class="ope-item van-hairline--bottom">
+      <van-icon bind_init="_initComponent" name="friends-o" class="icon"></van-icon>
+      <label>资料修改</label>
+      <van-icon bind_init="_initComponent" name="arrow"></van-icon>
+    </view>
+    <view data-wpy-evt="4-42" bindtap="_proxy" class="ope-item van-hairline--bottom">
+      <van-icon bind_init="_initComponent" name="coupon-o" class="icon"></van-icon>
+      <label>我的推广</label>
+      <van-icon bind_init="_initComponent" name="arrow"></van-icon>
+    </view>
+    <view data-wpy-evt="4-43" bindtap="_proxy" class="ope-item van-hairline--bottom">
+      <van-icon bind_init="_initComponent" name="shopping-cart-o" class="icon"></van-icon>
+      <label>我的课程</label>
+      <van-icon bind_init="_initComponent" name="arrow"></van-icon>
+    </view>
+    <view data-wpy-evt="4-44" bindtap="_proxy" class="ope-item van-hairline--bottom">
+      <van-icon bind_init="_initComponent" name="label-o" class="icon"></van-icon>
+      <label>收藏列表</label>
+      <van-icon bind_init="_initComponent" name="arrow"></van-icon>
+    </view>
+    <view class="ope-item">
+      <van-icon bind_init="_initComponent" name="phone-circle-o" class="icon"></van-icon>
+      <label data-wpy-evt="4-45" bindtap="_proxy">校长办公室</label>
+      <van-icon bind_init="_initComponent" name="arrow"></van-icon>
+    </view>
+  </view>
 </view>

@@ -1,0 +1,11 @@
+
+<view class="container">
+  <van-field bind_init="_initComponent" value="{{ message }}" type="textarea" placeholder="请输入评论内容" autosize border="{{ false }}" class="comment"></van-field>
+  <van-cell-group bind_init="_initComponent" class="btn-conatiner">
+    <van-cell bind_init="_initComponent" border="{{ false }}">
+      <van-rate bind_init="_initComponent" custom-class="rate" value="{{ value }}"></van-rate>
+      <van-button bind_init="_initComponent" custom-class="btn" type="info" data-wpy-evt="65-33" bindtap="_proxy">发布</van-button>
+    </van-cell>
+  </van-cell-group>
+  <van-toast bind_init="_initComponent" id="toast"></van-toast>
+</view>

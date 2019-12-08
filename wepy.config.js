@@ -1,8 +1,8 @@
-const path = require('path');
-var prod = process.env.NODE_ENV === 'production';
+const path = require('path')
+var prod = process.env.NODE_ENV === 'production'
 
 function resolve(dist) {
-  return path.join(__dirname, dist);
+  return path.join(__dirname, dist)
 }
 
 module.exports = {
@@ -33,4 +33,4 @@ module.exports = {
   appConfig: {
     noPromiseAPI: ['createSelectorQuery']
   }
-};
+}

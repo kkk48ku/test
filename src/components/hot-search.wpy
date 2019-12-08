@@ -1,0 +1,46 @@
+<template>
+  <div class="hot-search-container">
+    <h1 class="hot-search-title">🔥热搜推荐</h1>
+    <div class="search-item-container">
+      <van-tag @click="handleItemClick(item)" v-for="(item,index) in hotSearchList" :key="index" class="search-item" plain type="danger">{{item}}</van-tag>
+    </div>
+  </div>
+</template>
+
+<script>
+  import wepy from '@wepy/core'
+  wepy.component({
+    props: {
+      hotSearchList: Array
+    },
+    methods: {
+      handleItemClick(item) {
+        this.$emit('hotSearchClick', item)
+      }
+    }
+  })
+</script>
+
+<style lang="less" scoped>
+  .hot-search-container {
+    padding: 7px 13px;
+    .hot-search-title {
+      font-size: 14px;
+    }
+    .search-item-container {
+      margin: 5px 0;
+      .search-item {
+        display: inline-block;
+        margin: 3px 5px;
+      }
+    }
+  }
+</style>
+
+<config>
+{
+    usingComponents: {
+      "van-tag": "./vant-weapp/tag/index"
+    }
+}
+</config>

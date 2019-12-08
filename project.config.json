@@ -3,8 +3,23 @@
 	"setting": {
 		"urlCheck": true,
 		"es6": false,
-		"postcss": false,
-		"minified": false
+		"enhance": false,
+		"postcss": true,
+		"minified": false,
+		"newFeature": true,
+		"coverView": true,
+		"nodeModules": false,
+		"autoAudits": false,
+		"uglifyFileName": false,
+		"checkInvalidKey": true,
+		"checkSiteMap": true,
+		"uploadWithSourceMap": true,
+		"babelSetting": {
+			"ignore": [],
+			"disablePlugins": [],
+			"outputPath": ""
+		},
+		"bundle": false
 	},
 	"compileType": "miniprogram",
 	"appid": "touristappid",
@@ -13,5 +28,99 @@
 	"simulatorType": "wechat",
 	"simulatorPluginLibVersion": {},
 	"libVersion": "2.8.3",
-	"condition": {}
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"list": []
+		},
+		"gamePlugin": {
+			"current": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": -1,
+			"list": [
+				{
+					"id": -1,
+					"name": "pages/search",
+					"pathName": "pages/search",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/mine",
+					"pathName": "pages/mine",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/account",
+					"pathName": "pages/account",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/school",
+					"pathName": "pages/school",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/course",
+					"pathName": "pages/course",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/courseitem",
+					"pathName": "pages/courseitem",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/teacheritem",
+					"pathName": "pages/teacheritem",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/comment",
+					"pathName": "pages/comment",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/popularize",
+					"pathName": "pages/popularize",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/collections",
+					"pathName": "pages/collections",
+					"scene": null
+				}
+			]
+		}
+	}
 }

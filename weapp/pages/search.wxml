@@ -1,0 +1,6 @@
+
+<view class="container">
+  <basesearch bind_init="_initComponent" searchResultList="{{ searchResultList }}" label="{{ '测试' }}" actionBtn="{{ '搜索' }}" inputVal="{{ inputVal }}" data-wpy-evt="5-0" bindhandleResultHide="_proxy" bindhandleSearchData="_proxy" bindinputChange="_proxy"></basesearch>
+  <hotsearch bind_init="_initComponent" hotSearchList="{{ hotSearchList }}" data-wpy-evt="5-3" bindhotSearchClick="_proxy"></hotsearch>
+  <searchresult bind_init="_initComponent" searchResultList="{{ searchResultList }}" searchResultShow="{{ searchResultShow }}"></searchresult>
+</view>

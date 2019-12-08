@@ -1,5 +1,9 @@
 {
-    "navigationBarTitleText": "我的课程",
+    "navigationBarTitleText": "全部课程",
     "component": true,
-    "usingComponents": {}
+    "usingComponents": {
+        "van-sidebar": "./../components/vant-weapp/sidebar/index",
+        "van-sidebar-item": "./../components/vant-weapp/sidebar-item/index",
+        "basegoods": "./../components/base-goods"
+    }
 }

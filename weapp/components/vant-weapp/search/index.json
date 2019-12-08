@@ -1,6 +1,6 @@
 {
     "component": true,
     "usingComponents": {
-        "van-field": "../field/index"
+        "van-field": "./../field/index"
     }
 }

@@ -1,0 +1,13 @@
+{
+    "navigationBarTitleText": "推广中心",
+    "component": true,
+    "usingComponents": {
+        "van-tab": "./../components/vant-weapp/tab/index",
+        "van-tabs": "./../components/vant-weapp/tabs/index",
+        "van-toast": "./../components/vant-weapp/toast/index",
+        "van-cell": "./../components/vant-weapp/cell/index",
+        "van-cell-group": "./../components/vant-weapp/cell-group/index",
+        "van-collapse": "./../components/vant-weapp/collapse/index",
+        "van-collapse-item": "./../components/vant-weapp/collapse-item/index"
+    }
+}

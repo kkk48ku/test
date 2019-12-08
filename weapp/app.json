@@ -2,7 +2,16 @@
     "pages": [
         "pages/index",
         "pages/course",
-        "pages/mine"
+        "pages/mine",
+        "pages/search",
+        "pages/account",
+        "pages/school",
+        "pages/courseitem",
+        "pages/teacheritem",
+        "pages/comment",
+        "pages/popularize",
+        "pages/collections",
+        "pages/mycourse"
     ],
     "window": {
         "backgroundTextStyle": "light",
@@ -33,5 +42,6 @@
                 "selectedIconPath": "images/mine-active.png"
             }
         ]
-    }
+    },
+    "usingComponents": {}
 }

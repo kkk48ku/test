@@ -1,0 +1,72 @@
+<template>
+  <div class="container">
+    <div class="personal-data van-hairline--bottom">
+      <div class="avatar-container">
+        <img class="avatar" src="../images/avatar.jpg">
+      </div>
+      <div class="username">Bovine</div>
+    </div>
+    <ul>
+      <li class="item">
+        <van-field v-model="name" clearable label="姓名" placeholder="请输入您的姓名" />
+      </li>
+      <li>
+        <van-field v-model="school" clearable label="学校" placeholder="请输入您的学校" />
+      </li>
+      <li>
+        <van-field v-model="myclass" clearable label="班级" placeholder="请输入您的班级" />
+      </li>
+    </ul>
+    <van-button class="submit-btn" type="info" custom-style="width:100%;height:30px;">提交</van-button>
+  </div>
+</template>
+
+<script>
+  import wepy from '@wepy/core'
+  wepy.page({
+    data: {
+      name: '',
+      school: '',
+      myclass: ''
+    }
+  })
+</script>
+
+<style lang="less" scoped>
+  .container {
+    padding: 0 10px;
+    .personal-data {
+      display: flex;
+      align-items: center;
+      padding: 15px 0;
+      .avatar-container {
+        .avatar {
+          width: 60px;
+          height: 60px;
+          overflow: hidden;
+          border-radius: 50%;
+          margin-right: 10px;
+        }
+      }
+      .username {
+        font-size: 16px;
+        letter-spacing: .2px;
+      }
+    }
+    .submit-btn{
+      display: block;
+      margin-top: 10px;
+      width: 100%;
+    }
+  }
+</style>
+
+<config>
+{
+    navigationBarTitleText: '资料修改',
+    usingComponents: {
+      "van-field": "../components/vant-weapp/field/index",
+      "van-button": "../components/vant-weapp/button/index"
+    }
+}
+</config>

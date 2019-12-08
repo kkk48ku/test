@@ -1,5 +1,7 @@
 {
     "navigationBarTitleText": "学员中心",
     "component": true,
-    "usingComponents": {}
+    "usingComponents": {
+        "van-icon": "./../components/vant-weapp/icon/index"
+    }
 }

@@ -1,0 +1,14 @@
+.hot-search-container {
+  padding: 7px 13px;
+}
+.hot-search-container .hot-search-title {
+  font-size: 14px;
+}
+.hot-search-container .search-item-container {
+  margin: 5px 0;
+}
+.hot-search-container .search-item-container .search-item {
+  display: inline-block;
+  margin: 3px 5px;
+}
+

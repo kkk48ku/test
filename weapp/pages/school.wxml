@@ -1,0 +1,17 @@
+
+<view class="container">
+  <view>
+    <view class="item van-hairline--bottom">
+      学校全称：测试
+    </view>
+    <view class="item van-hairline--bottom">
+      学校地址：测试
+    </view>
+    <view class="item van-hairline--bottom">
+      客服电话：18273837837
+    </view>
+    <view class="item">
+      联系我们：yongxinjiaoyu@163.com
+    </view>
+  </view>
+</view>

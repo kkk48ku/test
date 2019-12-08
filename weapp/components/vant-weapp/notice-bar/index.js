@@ -1,6 +1,6 @@
 "use strict";
 
-var _component = require('../common/component.js');
+var _component = require('./../common/component.js');
 
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
 

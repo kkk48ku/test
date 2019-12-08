@@ -1,26 +1,40 @@
-<style lang="less"></style>
+<style lang="less">
+@import "./components/vant-weapp/common/index.wxss";
+</style>
 
 <script>
-import wepy from '@wepy/core'
-// import eventHub from './common/eventHub'
-
-wepy.app({
-  hooks: {},
-  globalData: {
-    userInfo: null
-  },
-
-  onLaunch() {},
-
-  methods: {}
-})
+  import wepy from '@wepy/core'
+  // import eventHub from './common/eventHub'
+  wepy.app({
+    hooks: {},
+    globalData: {
+      userInfo: null,
+      activeCourseKey: 0
+    },
+    async onLaunch() {
+      // console.log(wepy.getUserInfo)
+      // await wepy.login()
+      // this.userInfo = await wepy.getUserInfo()
+    },
+    methods: {}
+  })
 </script>
+
 <config>
 {
     "pages": [
         "pages/index",
         "pages/course",
-        "pages/mine"
+        "pages/mine",
+        "pages/search",
+        "pages/account",
+        "pages/school",
+        "pages/courseitem",
+        "pages/teacheritem",
+        "pages/comment",
+        "pages/popularize",
+        "pages/collections",
+        "pages/mycourse"
     ],
     "window": {
         "backgroundTextStyle": "light",
