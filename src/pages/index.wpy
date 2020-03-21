@@ -7,29 +7,20 @@
     <!-- <basenoticebar :text="notice"></basenoticebar> -->
     <baseswiper :swipersetting="swipersetting"></baseswiper>
     <basenav></basenav>
-    <basegoods :imageURL="imageURL"></basegoods>
+    <basegoods :imageURL="imageURL" :courseList="courseList"></basegoods>
   </div>
 </template>
 
 <script>
 import wepy from '@wepy/core'
-// import eventHub from '../common/eventHub'
-// import testMixin from '../mixins/test'
+import Apis from '../apis/apis'
+const apis = new Apis()
+
 wepy.page({
   data: {
     notice: '全部课程打五折~~~',
     swipersetting: {
-      swiperGroup: [
-        {
-          id: 1
-        },
-        {
-          id: 2
-        },
-        {
-          id: 3
-        }
-      ],
+      swiperGroup: [],
       indicatorDots: true,
       indicatorColor: '#ccc',
       indicatorActiveColor: '#fff',
@@ -38,7 +29,8 @@ wepy.page({
       duration: 500,
       circular: true
     },
-    imageURL: 'https://tva1.sinaimg.cn/large/006tNbRwgy1g9knjrijc3j30u00vj0tc.jpg'
+    imageURL: 'https://tva1.sinaimg.cn/large/006tNbRwgy1g9knjrijc3j30u00vj0tc.jpg',
+    courseList: []
   },
   methods: {
     // 点击搜索框跳转搜索界面
@@ -46,7 +38,36 @@ wepy.page({
       this.$navigate({
         url: 'search'
       })
+    },
+    async getBanners() {
+      try {
+        const res = await apis.getBanners()
+        if (res && res.errcode === 0 && res.data) {
+          const { list } = res.data
+          this.swipersetting.swiperGroup = list
+        } else {
+          console.log(res.errmsg)
+        }
+      } catch (error) {
+        console.log('error: ', error)
+      }
+    },
+    async getCourseList() {
+      try {
+        const res = await apis.getCourseList()
+        if (res && res.errcode === 0 && res.data) {
+          this.courseList = res.data
+        } else {
+          console.log(res.errmsg)
+        }
+      } catch (error) {
+        console.log('error: ', error)
+      }
     }
+  },
+  async onLoad() {
+    this.getBanners()
+    this.getCourseList()
   }
 })
 </script>

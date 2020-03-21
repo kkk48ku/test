@@ -1,8 +1,0 @@
-{
-    "navigationBarTitleText": "资料修改",
-    "component": true,
-    "usingComponents": {
-        "van-field": "./../components/vant-weapp/field/index",
-        "van-button": "./../components/vant-weapp/button/index"
-    }
-}

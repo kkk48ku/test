@@ -1,9 +1,0 @@
-{
-    "navigationBarTitleText": "搜索",
-    "component": true,
-    "usingComponents": {
-        "basesearch": "./../components/base-search",
-        "hotsearch": "./../components/hot-search",
-        "searchresult": "./../components/search-result"
-    }
-}

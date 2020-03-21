@@ -2,63 +2,110 @@
   <div class="container">
     <div class="personal-data van-hairline--bottom">
       <div class="avatar-container">
-        <img class="avatar" src="../images/avatar.jpg">
+        <img class="avatar" src="{{avatar}}" />
       </div>
-      <div class="username">Bovine</div>
+      <div class="username">{{nickName}}</div>
     </div>
     <ul>
       <li class="item">
-        <van-field v-model="name" clearable label="姓名" placeholder="请输入您的姓名" />
+        <label class="label" for="name">姓名：</label>
+        <input class="input" id="name" type="text" v-model="name" placeholder="请输入您的姓名" />
       </li>
-      <li>
-        <van-field v-model="school" clearable label="学校" placeholder="请输入您的学校" />
+      <li class="item">
+        <label class="label" for="name">学校：</label>
+        <input class="input" id="school" type="text" v-model="school" placeholder="请输入您的学校" />
       </li>
-      <li>
-        <van-field v-model="myclass" clearable label="班级" placeholder="请输入您的班级" />
+      <li class="item">
+        <label class="label" for="name">班级：</label>
+        <input class="input" id="myclass" type="text" v-model="myclass" placeholder="请输入您的班级" />
       </li>
     </ul>
-    <van-button class="submit-btn" type="info" custom-style="width:100%;height:30px;">提交</van-button>
+    <van-button
+      class="submit-btn"
+      type="info"
+      custom-style="marginTop:10px;width:100%;height:40px;"
+      @click="handleSubmit"
+    >提交</van-button>
   </div>
 </template>
 
 <script>
-  import wepy from '@wepy/core'
-  wepy.page({
-    data: {
-      name: '',
-      school: '',
-      myclass: ''
+import wepy from '@wepy/core'
+
+wepy.page({
+  data: {
+    name: '',
+    school: '',
+    myclass: '',
+    avatar: '',
+    nickName: ''
+  },
+  methods: {
+    handleSubmit() {
+      if (!this.name || !this.school || !this.myclass) {
+        wx.showToast({
+          title: '请将字段填写完整后再提交！',
+          icon: 'none'
+        })
+        return
+      }
+      wx.showToast({
+        title: '提交成功！',
+        success: () => {
+          setTimeout(() => {
+            wx.navigateBack()
+          }, 1000)
+        }
+      })
     }
-  })
+  },
+  onLoad() {
+    const { avatarUrl, nickName } = this.$wx.options
+    this.avatar = avatarUrl
+    this.nickName = nickName
+  }
+})
 </script>
 
 <style lang="less" scoped>
-  .container {
-    padding: 0 10px;
-    .personal-data {
-      display: flex;
-      align-items: center;
-      padding: 15px 0;
-      .avatar-container {
-        .avatar {
-          width: 60px;
-          height: 60px;
-          overflow: hidden;
-          border-radius: 50%;
-          margin-right: 10px;
-        }
-      }
-      .username {
-        font-size: 16px;
-        letter-spacing: .2px;
+.container {
+  padding: 0 10px;
+  .personal-data {
+    display: flex;
+    align-items: center;
+    padding: 15px 10px;
+    .avatar-container {
+      .avatar {
+        width: 60px;
+        height: 60px;
+        overflow: hidden;
+        border-radius: 50%;
+        margin-right: 10px;
       }
     }
-    .submit-btn{
-      display: block;
-      margin-top: 10px;
-      width: 100%;
+    .username {
+      font-size: 16px;
+      letter-spacing: 0.2px;
     }
   }
+  .item {
+    display: flex;
+    align-items: center;
+    height: 50px;
+    padding: 0 10px;
+    .label {
+      margin: 10px;
+    }
+    .input {
+      flex: 1;
+    }
+  }
+  .submit-btn {
+    display: block;
+    margin-top: 10px;
+    width: 100%;
+  }
+}
 </style>
 
 <config>
@@ -66,7 +113,7 @@
     navigationBarTitleText: '资料修改',
     usingComponents: {
       "van-field": "../components/vant-weapp/field/index",
-      "van-button": "../components/vant-weapp/button/index"
+      "van-button": "../components/vant-weapp/button/index",
     }
 }
 </config>

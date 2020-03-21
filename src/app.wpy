@@ -1,23 +1,17 @@
 <style lang="less">
-@import "./components/vant-weapp/common/index.wxss";
+@import './components/vant-weapp/common/index.wxss';
 </style>
 
 <script>
-  import wepy from '@wepy/core'
-  // import eventHub from './common/eventHub'
-  wepy.app({
-    hooks: {},
-    globalData: {
-      userInfo: null,
-      activeCourseKey: 0
-    },
-    async onLaunch() {
-      // console.log(wepy.getUserInfo)
-      // await wepy.login()
-      // this.userInfo = await wepy.getUserInfo()
-    },
-    methods: {}
-  })
+import wepy from '@wepy/core'
+// import eventHub from './common/eventHub'
+wepy.app({
+  hooks: {},
+  globalData: {
+    userInfo: null,
+    activeCourseKey: 0
+  }
+})
 </script>
 
 <config>
@@ -65,6 +59,11 @@
           selectedIconPath: "images/mine-active.png"
         }
       ]
+    },
+    "permission": {
+      "scope.userLocation": {
+        "desc": "需要获取您的地址权限以为您提供更好的服务"
+      }
     }
 }
 

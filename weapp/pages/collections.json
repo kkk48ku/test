@@ -1,7 +1,0 @@
-{
-    "navigationBarTitleText": "我的收藏",
-    "component": true,
-    "usingComponents": {
-        "basegoods": "./../components/base-goods"
-    }
-}

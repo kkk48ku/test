@@ -1,38 +1,28 @@
 <template>
   <div class="container">
     <ul>
-      <li class="item van-hairline--bottom">
-        学校全称：测试
-      </li>
-      <li class="item van-hairline--bottom">
-        学校地址：测试
-      </li>
-      <li class="item van-hairline--bottom">
-        客服电话：18273837837
-      </li>
-      <li class="item">
-        联系我们：yongxinjiaoyu@163.com
-      </li>
+      <li class="item van-hairline--bottom">学校全称：测试</li>
+      <li class="item van-hairline--bottom">学校地址：测试</li>
+      <li class="item van-hairline--bottom">客服电话：18273837837</li>
+      <li class="item">联系我们：yongxinjiaoyu@163.com</li>
     </ul>
   </div>
 </template>
 
 <script>
-  import wepy from '@wepy/core'
-  wepy.page({
-
-  })
+import wepy from '@wepy/core'
+wepy.page({})
 </script>
 
 <style lang="less" scoped>
-  .container {
-    padding: 0 10px;
-    .item{
-      height: 40px;
-      line-height: 40px;
-      font-size: 12px;
-    }
+.container {
+  padding: 0 10px;
+  .item {
+    height: 50px;
+    line-height: 50px;
+    font-size: 16px;
   }
+}
 </style>
 
 <config>

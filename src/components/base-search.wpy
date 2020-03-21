@@ -3,12 +3,12 @@
     <div class="search-wrapper">
       <label for="baseSearch" v-if="label"></label>
       <input
+        auto-focus
         id="baseSearch"
         v-model="inputVal"
         @input="handleInputChange"
         placeholder="请输入要搜索的课程或老师"
         type="text"
-        focus
       />
     </div>
     <span class="action-btn" @click="handleSearchBtnClick" v-if="!searchResultList">{{ actionBtn }}</span>
@@ -108,32 +108,6 @@ wepy.component({
     searchAjax() {
       if (!this.inputVal) return
       console.log('搜索')
-      // const data = [
-      //   {
-      //     id: 1,
-      //     content: '猫和老鼠'
-      //   },
-      //   {
-      //     id: 2,
-      //     content: '猫和老鼠'
-      //   },
-      //   {
-      //     id: 3,
-      //     content: '猫和老鼠'
-      //   },
-      //   {
-      //     id: 4,
-      //     content: '猫和老鼠'
-      //   },
-      //   {
-      //     id: 5,
-      //     content: '猫和老鼠'
-      //   },
-      //   {
-      //     id: 6,
-      //     content: '猫和老鼠'
-      //   }
-      // ]
       const data = []
       if (!this.loading) {
         this.loading = true

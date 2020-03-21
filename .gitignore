@@ -1,8 +1,9 @@
 node_modules
+weapp
 dist
 .DS_Store
-/vant-weapp
+vant-weapp
 /src/components/vant-weapp
-
+.vscode
 /package-lock.json
 /yarn-lock.json

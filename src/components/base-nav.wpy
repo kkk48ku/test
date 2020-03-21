@@ -1,21 +1,29 @@
 <template>
   <van-grid column-num="4">
-    <van-grid-item link-type="switchTab" url="/pages/course" icon="point-gift-o" text="免费课程" dot bind:click="navItemClick(0)"/>
+    <van-grid-item
+      link-type="switchTab"
+      url="/pages/course"
+      icon="point-gift-o"
+      text="免费课程"
+      dot
+      bind:click="navItemClick(0)"
+    />
     <van-grid-item link-type="switchTab" url="/pages/course" icon="fire-o" text="精品课程" />
     <van-grid-item link-type="switchTab" url="/pages/course" icon="description" text="全部课程" />
-    <van-grid-item icon="user-circle-o" text="我的课程" />
+    <van-grid-item link-type="switchTab" url="/pages/mine" icon="user-circle-o" text="我的课程" />
   </van-grid>
 </template>
 
 <script>
-  import wepy from '@wepy/core'
-  wepy.component({
-    props: {
-      text: String
-    },
-    data() {
-      return {
-        navs: [{
+import wepy from '@wepy/core'
+wepy.component({
+  props: {
+    text: String
+  },
+  data() {
+    return {
+      navs: [
+        {
           id: 0,
           link: '/',
           icon: '',
@@ -39,19 +47,18 @@
           icon: '',
           text: 'nav4'
         }
-        ]
-      }
-    },
-    methods: {
-      navItemClick(item) {
-        this.$app.$options.globalData.activeCourseKey = item
-      }
+      ]
     }
-  })
+  },
+  methods: {
+    navItemClick(item) {
+      this.$app.$options.globalData.activeCourseKey = item
+    }
+  }
+})
 </script>
 
 <style lang="less" scoped>
-
 </style>
 
 <config>

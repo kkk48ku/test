@@ -1,8 +1,0 @@
-
-<view class="base-swiper-container">
-  <swiper indicator-dots="{{ swipersetting.indicatorDots }}" indicator-color="{{ swipersetting.indicatorColor }}" indicator-active-color="{{ swipersetting.indicatorActiveColor }}" autoplay="{{ swipersetting.autoplay }}" interval="{{ swipersetting.interval }}" duration="{{ swipersetting.duration }}" circular="{{ swipersetting.circular }}">
-    <swiper-item wx:for="{{ swipersetting.swiperGroup }}" wx:for-index="index" wx:for-item="item" wx:key="index" key="{{ item.id }}">
-      {{ item.id }}
-    </swiper-item>
-  </swiper>
-</view>
