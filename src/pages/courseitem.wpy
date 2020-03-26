@@ -1,7 +1,12 @@
 <template>
   <div class="container">
     <div class="top-video-container">
-      <video class="top-video" autoplay object-fit="fill" show-fullscreen-btn src="http://wxsnsdy.tc.qq.com/105/20210/snsdyvideodownload?filekey=30280201010421301f0201690402534804102ca905ce620b1241b726bc41dcff44e00204012882540400&bizid=1023&hy=SH&fileparam=302c020101042530230204136ffd93020457e3c4ff02024ef202031e8d7f02030f42400204045a320a0201000400"></video>
+      <video
+        class="top-video"
+        object-fit="fill"
+        show-fullscreen-btn
+        src="http://wxsnsdy.tc.qq.com/105/20210/snsdyvideodownload?filekey=30280201010421301f0201690402534804102ca905ce620b1241b726bc41dcff44e00204012882540400&bizid=1023&hy=SH&fileparam=302c020101042530230204136ffd93020457e3c4ff02024ef202031e8d7f02030f42400204045a320a0201000400"
+      ></video>
     </div>
     <van-tabs>
       <van-tab class="tab-item" title="课程详情" :swipeable="true">
@@ -10,7 +15,14 @@
             <div class="course-title">课程标题</div>
             <div class="course-desc">课程简介课程简介课程简介</div>
             <div class="course-rate">
-              <van-rate value="{{ 5 }}" size="{{ 10 }}" color="#ee0a24" void-color="#eee" void-icon="star" readonly />
+              <van-rate
+                value="{{ 5 }}"
+                size="{{ 10 }}"
+                color="#ee0a24"
+                void-color="#eee"
+                void-icon="star"
+                readonly
+              />
               <span class="play-time">380万次播放</span>
             </div>
           </div>
@@ -18,7 +30,7 @@
         <div class="teacher-info van-hairline--bottom">
           <div class="title">讲师</div>
           <div class="info" @click="handleTeacherClick">
-            <image class="teacher-img" src="../images/avatar.jpg" alt="" />
+            <image class="teacher-img" src="../images/avatar.jpg" alt />
             <div class="right-bar">
               <div class="name">黄老师</div>
               <div class="job">高级语文教师</div>
@@ -33,21 +45,36 @@
               <div class="username">用户 测试：</div>
               <div class="time">2019年11月1日</div>
             </div>
-            <div class="content">
-              黄老师的课最好看了！黄老师的课最好看了！黄老师的课最好看了！
-            </div>
+            <div class="content">黄老师的课最好看了！黄老师的课最好看了！黄老师的课最好看了！</div>
             <div class="rate">
-              <van-rate value="{{ 5 }}" size="{{ 5 }}" color="#ee0a24" void-color="#eee" void-icon="star" readonly />
+              <van-rate
+                value="{{ 5 }}"
+                size="{{ 5 }}"
+                color="#ee0a24"
+                void-color="#eee"
+                void-icon="star"
+                readonly
+              />
             </div>
           </div>
         </div>
         <div class="info-img-container">
-          <image mode="widthFix" class="info-img" src="https://st-gdx.dancf.com/gaodingx/49/design/20190701-195541-7972.png?x-oss-process=image/resize,w_795/interlace,1,image/format,webp" alt="" />
+          <image
+            mode="widthFix"
+            class="info-img"
+            src="https://st-gdx.dancf.com/gaodingx/49/design/20190701-195541-7972.png?x-oss-process=image/resize,w_795/interlace,1,image/format,webp"
+            alt
+          />
           <div class="purchase-btn-container">
             <van-goods-action>
               <van-goods-action-icon @click="handleCommentClick" icon="comment-o" text="评价" />
               <van-goods-action-icon @click="handleCollectClick" icon="like-o" text="收藏" />
-              <van-goods-action-button @click="handlePurchase" class="purchase-btn" custom-class="purchase-btn" text="立即购买" />
+              <van-goods-action-button
+                @click="handlePurchase"
+                class="purchase-btn"
+                custom-class="purchase-btn"
+                text="立即购买"
+              />
             </van-goods-action>
           </div>
         </div>
@@ -56,20 +83,15 @@
         <div class="course-selections">
           <div class="title-bar van-hairline--bottom">
             <p>课程目录</p>
-            <p class="right-bar">上次学到:<span>55集：04:50</span></p>
           </div>
           <div class="selections">
             <div class="sel-item van-hairline--bottom" v-for="(item, index) of 11" :key="index">
               <p class="top-bar">
-                <van-tag custom-class="tag" round type="warning">第一集</van-tag>
-                我是第一集我是第一集我是第一集我是第一集我是第一集我是第一集我是第一集
+                <van-tag custom-class="tag" round type="warning">第一集</van-tag>我是第一集我是第一集我是第一集我是第一集我是第一集我是第一集我是第一集
               </p>
               <div class="bottom-bar">
-                <div class="left-bar">
-                  <van-icon size="16px" custom-class="icon" name="underway-o" /> 06：26 | 已学5%
-                </div>
                 <div class="right-bar">
-                  <van-icon size="20px" custom-class="icon" name="play-circle-o" /> 播放
+                  <van-icon size="20px" custom-class="icon" name="play-circle-o" />播放
                 </div>
               </div>
             </div>
@@ -82,194 +104,200 @@
 </template>
 
 <script>
-  import wepy from '@wepy/core'
-  import Toast from '../components/vant-weapp/toast/toast'
-  wepy.page({
-    methods: {
-      handleTeacherClick() {
-        this.$navigate({
-          url: 'teacheritem'
-        })
-      },
-      handlePurchase() {
-        Toast.fail({
-          selector: '#toast',
-          message: '暂未接入微信支付功能！'
-        })
-      },
-      handleCommentClick() {
-        this.$navigate({
-          url: 'comment'
-        })
-      },
-      handleCollectClick() {
-        Toast.success({
-          selector: '#toast',
-          message: '收藏成功，请到个人中心-我的收藏查看！'
-        })
-      }
+import wepy from '@wepy/core'
+import Toast from '../components/vant-weapp/toast/toast'
+wepy.page({
+  onLoad(options) {
+    // 课程id
+    const id = options.id
+
+    console.log('id: ', id)
+  },
+  methods: {
+    handleTeacherClick() {
+      this.$navigate({
+        url: 'teacheritem'
+      })
+    },
+    handlePurchase() {
+      Toast.fail({
+        selector: '#toast',
+        message: '暂未接入微信支付功能！'
+      })
+    },
+    handleCommentClick() {
+      this.$navigate({
+        url: 'comment'
+      })
+    },
+    handleCollectClick() {
+      Toast.success({
+        selector: '#toast',
+        message: '收藏成功，请到个人中心-我的收藏查看！'
+      })
     }
-  })
+  }
+})
 </script>
 
 <style lang="less">
-  #toast {
-    text-align: center;
-  }
-  .container {
-    .top-video-container {
+#toast {
+  text-align: center;
+}
+.container {
+  .top-video-container {
+    width: 100%;
+    height: 200px;
+    .top-video {
       width: 100%;
       height: 200px;
-      .top-video {
-        width: 100%;
-        height: 200px;
-      }
     }
-    .tab-item {
-      font-size: 14px;
-    }
-    .course-details {
-      padding: 15px;
-      .course-info {
-        .course-title {
-          font-size: 14px;
-          line-height: 25px;
-          font-weight: 600;
-        }
-        .play-time,
-        .course-desc {
-          font-size: 12px;
-          line-height: 25px;
-          color: #999;
-        }
-        .course-rate {
-          display: flex;
-          align-items: center;
-        }
-        .play-time {
-          margin-left: 10px;
-        }
-      }
-    }
-    .info-img-container {
-      margin-bottom: 40px;
-      .info-img {
-        width: 100%;
-      }
-    }
-    .teacher-info {
-      padding: 10px 15px;
-      .title {
+  }
+  .tab-item {
+    font-size: 14px;
+  }
+  .course-details {
+    padding: 15px;
+    .course-info {
+      .course-title {
         font-size: 14px;
+        line-height: 25px;
         font-weight: 600;
-        margin-bottom: 10px;
       }
-      .info {
+      .play-time,
+      .course-desc {
+        font-size: 12px;
+        line-height: 25px;
+        color: #999;
+      }
+      .course-rate {
         display: flex;
         align-items: center;
-        margin-bottom: 10px;
-        .teacher-img {
-          width: 40px;
-          height: 40px;
-          border-radius: 50%;
-          margin-right: 10px;
-        }
-        .right-bar {
-          font-size: 14px;
-          line-height: 20px;
-          flex: 1 1;
-          .job {
-            font-size: 12px;
-          }
-        }
-        .icon {
-          color: #333;
-        }
+      }
+      .play-time {
+        margin-left: 10px;
       }
     }
-    .comment-list {
-      padding: 10px 15px;
-      .title {
-        font-size: 14px;
-        font-weight: 600;
-        margin-bottom: 10px;
-      }
-      .comment-item{
-        padding: 10px 0;
-        .info{
-          display: flex;
-          justify-content: space-between;
-          margin-bottom: 10px;
-        }
-        .content{
-          line-height: 20px;
-          font-size: 12px;
-          color: #333;
-        }
-        .rate{
-          margin-top: 10px;
-        }
-      }
-    }
-    .purchase-btn-container {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      right: 0;
+  }
+  .info-img-container {
+    margin-bottom: 40px;
+    .info-img {
       width: 100%;
-      height: 40px;
-      .purchase-btn {
-        border-radius: 25px;
+    }
+  }
+  .teacher-info {
+    padding: 10px 15px;
+    .title {
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+    .info {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+      .teacher-img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        margin-right: 10px;
+      }
+      .right-bar {
+        font-size: 14px;
+        line-height: 20px;
+        flex: 1 1;
+        .job {
+          font-size: 12px;
+        }
+      }
+      .icon {
+        color: #333;
       }
     }
-    .course-selections {
-      padding: 10px;
-      border-top: 5px solid rgb(236, 236, 236);
-      .title-bar {
+  }
+  .comment-list {
+    padding: 10px 15px;
+    .title {
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+    .comment-item {
+      padding: 10px 0;
+      .info {
         display: flex;
         justify-content: space-between;
-        padding-bottom: 10px;
-        .right-bar {
-          font-size: 12px;
-          letter-spacing: .2px;
-          color: #ff976a;
-        }
+        margin-bottom: 10px;
       }
-      .selections {
-        .sel-item {
-          padding: 10px 0;
-          .top-bar {
-            line-height: 25px;
-            font-size: 12px;
-            color: #444;
-            .tag {
+      .content {
+        line-height: 20px;
+        font-size: 12px;
+        color: #333;
+      }
+      .rate {
+        margin-top: 10px;
+      }
+    }
+  }
+  .purchase-btn-container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 40px;
+    .purchase-btn {
+      border-radius: 25px;
+    }
+  }
+  .course-selections {
+    padding: 10px;
+    border-top: 5px solid rgb(236, 236, 236);
+    .title-bar {
+      display: flex;
+      justify-content: space-between;
+      padding-bottom: 10px;
+      .right-bar {
+        font-size: 12px;
+        letter-spacing: 0.2px;
+        color: #ff976a;
+      }
+    }
+    .selections {
+      .sel-item {
+        padding: 10px 0;
+        .top-bar {
+          line-height: 25px;
+          font-size: 12px;
+          color: #444;
+          .tag {
+            margin-right: 3px;
+          }
+        }
+        .bottom-bar {
+          height: 25px;
+          display: flex;
+          justify-content: space-between;
+          font-size: 12px;
+          .left-bar,
+          .right-bar {
+            display: inline-flex;
+            align-items: center;
+            .icon {
               margin-right: 3px;
             }
           }
-          .bottom-bar {
-            height: 25px;
-            display: flex;
-            justify-content: space-between;
-            font-size: 12px;
-            .left-bar,
-            .right-bar {
-              display: inline-flex;
-              align-items: center;
-              .icon {
-                margin-right: 3px;
-              }
-            }
-            .left-bar {
-              color: #999;
-            }
-            .right-bar {
-              color: #ff976a;
-            }
+          .left-bar {
+            color: #999;
+          }
+          .right-bar {
+            color: #ff976a;
           }
         }
       }
     }
   }
+}
 </style>
 
 <config>

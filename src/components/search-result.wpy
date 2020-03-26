@@ -1,61 +1,81 @@
 <template>
-  <div class="search-result-container" v-if="searchResultShow">
-    <div class="search-result" v-if="searchResultList">
-      <div v-for="item in searchResultList" :key="item.id" class="search-result-item">
-        <span class="icon icon-left"><van-icon size="14px" name="search" /></span>
-        <span class="text">{{item.content}}</span>
-        <span class="icon icon-right"><van-icon size="14px" name="arrow" /></span>
+  <div class="search-result-container">
+    <div class="search-result" v-if="isNotEmpty">
+      <div
+        v-for="item in searchResultList"
+        class="search-result-item"
+        :key="item.id"
+        @click="toCourse(item.id)"
+      >
+        <span class="icon icon-left">
+          <van-icon size="14px" name="search" />
+        </span>
+        <span class="text">[{{item.teacher.name}}] {{item.name}}</span>
+        <span class="icon icon-right">
+          <van-icon size="14px" name="arrow" />
+        </span>
       </div>
     </div>
-    <div v-else>
-      暂无搜索结果
-    </div>
+    <div v-else>暂无搜索结果</div>
   </div>
 </template>
 
 <script>
-  import wepy from '@wepy/core'
-  wepy.component({
-    props: {
-      searchResultList: Array,
-      searchResultShow: Boolean
+import wepy from '@wepy/core'
+wepy.component({
+  props: {
+    searchResultList: Array
+  },
+  computed: {
+    isNotEmpty() {
+      const list = this.searchResultList
+      return list && Array.isArray(list) && list.length
     }
-  })
+  },
+  methods: {
+    // 跳转到课程详情
+    toCourse(id) {
+      wx.redirectTo({
+        url: `courseitem?id=${id}`
+      })
+    }
+  }
+})
 </script>
 
 <style lang="less" scoped>
-  .search-result-container {
-    box-sizing: border-box;
-    margin-top: 50px;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    z-index: 100;
-    background: #fff;
-    padding: 7px 13px;
-    .search-result {
-      .search-result-item {
-        width: 100%;
-        height: 35px;
-        line-height: 35px;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        border-bottom: 1px solid #f5f5f5;
-        .icon {
-          flex: 0 0;
-        }
-        .text {
-          flex: 1 1;
-          font-size: 12px;
-          padding-left: 10px;
-          color: #666;
-        }
+.search-result-container {
+  box-sizing: border-box;
+  margin-top: 50px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 100;
+  background: #fff;
+  padding: 7px 13px;
+  .search-result {
+    .search-result-item {
+      width: 100%;
+      height: 35px;
+      line-height: 35px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      border-bottom: 1px solid #f5f5f5;
+      .icon {
+        flex: 0 0;
+      }
+      .text {
+        flex: 1 1;
+        font-size: 12px;
+        padding-left: 10px;
+        color: #666;
       }
     }
   }
+}
 </style>
 
 <config>

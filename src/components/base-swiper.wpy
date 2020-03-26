@@ -9,16 +9,16 @@
       :duration="swipersetting.duration"
       :circular="swipersetting.circular"
     >
-      <!-- <swiper-item v-for="item of swipersetting.swiperGroup" :key="item._id">
+      <swiper-item v-for="item of swipersetting.swiperGroup" :key="item._id">
         <image class="banner-img" mode="scaleToFill" src="{{item.bannerUrl}}" />
-      </swiper-item>-->
-      <swiper-item v-for="item of 7" :key="item._id">
+      </swiper-item>
+      <!-- <swiper-item v-for="item of 7" :key="item._id">
         <image
           class="banner-img"
           mode="scaleToFill"
           src="http://q77tur85m.bkt.clouddn.com/41d69752f8daf12299afc4e2469e3ee8"
         />
-      </swiper-item>
+      </swiper-item>-->
     </swiper>
   </div>
 </template>

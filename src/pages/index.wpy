@@ -4,9 +4,7 @@
       <span class="search-input">请输入要搜索的课程或老师</span>
       <span class="search-text">搜索</span>
     </div>
-    <!-- <basenoticebar :text="notice"></basenoticebar> -->
     <baseswiper :swipersetting="swipersetting"></baseswiper>
-    <basenav></basenav>
     <basegoods :imageURL="imageURL" :courseList="courseList"></basegoods>
   </div>
 </template>
@@ -18,7 +16,6 @@ const apis = new Apis()
 
 wepy.page({
   data: {
-    notice: '全部课程打五折~~~',
     swipersetting: {
       swiperGroup: [],
       indicatorDots: true,
@@ -107,9 +104,7 @@ wepy.page({
 {
     navigationBarTitleText: '首页',
     usingComponents: {
-      basenoticebar: '../components/base-notice-bar',
       baseswiper: '../components/base-swiper',
-      basenav: '../components/base-nav',
       basegoods: '../components/base-goods'
     }
 }

@@ -1,7 +1,7 @@
 <template>
   <div class="goods-container">
     <div class="goods-wrapper">
-      <!-- <div v-for="item in courseList" v-bind:key="item.name" @click="handleCourseItemClick">
+      <div v-for="item in courseList" v-bind:key="item.name" @click="handleCourseItemClick">
         <van-card
           custom-class="van-card"
           lazy-load="true"
@@ -11,29 +11,10 @@
           title="{{item.name}}"
           thumb="{{item.img}}"
           link-type="switchTab"
-          tag="推荐"
         >
           <view slot="tags" class="tags">
             <van-tag class="tag" type="success">推荐</van-tag>
-            <van-tag class="tag" type="warning">可试看</van-tag>
-          </view>
-        </van-card>
-      </div>-->
-      <div v-for="item in 7" v-bind:key="item.name" @click="handleCourseItemClick">
-        <van-card
-          custom-class="van-card"
-          lazy-load="true"
-          price="2.00"
-          origin-price="198.00"
-          desc="新用户数、客单价、重复消费、转介绍"
-          title="11模块、37大价值，引爆营销力"
-          thumb="{{ imageURL }}"
-          link-type="switchTab"
-          tag="免费"
-        >
-          <view slot="tags" class="tags">
-            <van-tag class="tag" type="success">免费</van-tag>
-            <van-tag class="tag" type="warning">可试看</van-tag>
+            <van-tag class="tag" type="success">推荐</van-tag>
           </view>
         </van-card>
       </div>

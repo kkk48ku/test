@@ -1,6 +1,6 @@
 class Request {
   constructor() {
-    this.header = {}
+    this._header = {}
   }
 
   /**
@@ -49,8 +49,7 @@ class Request {
         header: header,
         method: method,
         success: res => {
-          if (res.statusCode === 200) {
-            // 200: 服务端业务处理正常结束
+          if (res.statusCode.toString().indexOf(20) > -1 || res.statusCode.toString().indexOf(30) > -1) {
             resolve(res)
           } else {
             // 其它错误，提示用户错误信息

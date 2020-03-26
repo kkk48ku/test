@@ -64,6 +64,9 @@
 <script>
 import wepy from '@wepy/core'
 import { debounce } from '../utils/util.js'
+import Apis from '../apis/apis.js'
+const apis = new Apis()
+
 wepy.component({
   props: {
     label: String,
@@ -98,24 +101,20 @@ wepy.component({
     },
     // 处理点击搜索按钮函数
     handleSearchBtnClick(e) {
-      debounce(this.searchAjax, 300)
+      debounce(this.searchAjax, 150)
     },
     // 处理点击清除按钮函数
     handleCloseClick() {
       this.$emit('inputChange', '')
     },
     // 发送异步搜索函数
-    searchAjax() {
-      if (!this.inputVal) return
-      console.log('搜索')
-      const data = []
-      if (!this.loading) {
-        this.loading = true
-        setTimeout(() => {
-          this.loading = false
-          this.handleSearchData(data)
-        }, 2000)
+    async searchAjax() {
+      const res = await apis.search(this.inputVal)
+      if (res && res.errcode === 0) {
+        const data = res.data
+        this.handleSearchData(data)
       }
+      this.loading = false
     },
     // 处理搜索结果函数
     handleSearchData(data) {

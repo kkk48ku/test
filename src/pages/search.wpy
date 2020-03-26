@@ -1,71 +1,58 @@
 <template>
   <div class="container">
-    <basesearch :searchResultList="searchResultList" :label="'测试'" :actionBtn="'搜索'" :inputVal="inputVal" @handleResultHide="handleResultHide" @handleSearchData="handleSearchData" @inputChange="handleInputChange"></basesearch>
-    <hotsearch :hotSearchList="hotSearchList" @hotSearchClick="handleHotSearchClick"></hotsearch>
-    <searchresult :searchResultList="searchResultList" :searchResultShow="searchResultShow"></searchresult>
+    <basesearch
+      :searchResultList="searchResultList"
+      :label="'测试'"
+      :actionBtn="'搜索'"
+      :inputVal="inputVal"
+      @handleResultHide="handleResultHide"
+      @handleSearchData="handleSearchData"
+      @inputChange="handleInputChange"
+    ></basesearch>
+    <searchresult :searchResultList="list"></searchresult>
   </div>
 </template>
 
 <script>
-  import wepy from '@wepy/core'
-  // import eventHub from '../common/eventHub'
-  // import testMixin from '../mixins/test'
-  wepy.page({
-    data: {
-      searchResultShow: false,
-      inputVal: '',
-      hotSearchList: [
-        '测试',
-        '测试',
-        '好课哪里买',
-        '测试',
-        '好课哪里买',
-        '好课哪里买',
-        '好课哪里买',
-        '好课哪里买',
-        '好课哪里买',
-        '测试',
-        '测试',
-        '测试',
-        '测试',
-        '测试',
-        '测试',
-        '测试'
-      ],
-      searchResultList: null
-    },
-    methods: {
-      // 处理(base-search组件传回来的)搜索值
-      handleInputChange(val) {
-        if (!val) {
-          this.inputVal = ''
-          this.handleResultHide()
-        }
-        this.inputVal = val
-      },
-      // 处理热搜点击
-      handleHotSearchClick(val) {
-        this.inputVal = val
-      },
-      // 隐藏掉搜索结果栏
-      handleResultHide() {
-        // 清空搜索结果列表
-        this.searchResultList = null
-        this.searchResultShow = false
-      },
-      // 处理(base-search组件传回来的)搜索数据
-      handleSearchData(data) {
-        if (data.length > 0) this.searchResultList = data
-        this.searchResultShow = true
+import wepy from '@wepy/core'
+
+wepy.page({
+  data: {
+    searchResultShow: false,
+    inputVal: '',
+    list: []
+  },
+  methods: {
+    // 处理(base-search组件传回来的)搜索值
+    handleInputChange(val) {
+      if (!val) {
+        this.inputVal = ''
+        this.handleResultHide()
       }
+      this.inputVal = val
+    },
+    // 处理热搜点击
+    handleHotSearchClick(val) {
+      this.inputVal = val
+    },
+    // 隐藏掉搜索结果栏
+    handleResultHide() {
+      // 清空搜索结果列表
+      this.searchResultList = null
+      this.searchResultShow = false
+    },
+    // 处理(base-search组件传回来的)搜索数据
+    handleSearchData(data) {
+      this.list = data
     }
-  })
+  }
+})
 </script>
 
 <style lang="less">
-  basesearch {
-    width: 100%;
-  }
+basesearch {
+  width: 100%;
+}
 </style>
 
 <config>

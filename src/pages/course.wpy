@@ -1,49 +1,52 @@
 <template>
   <div class="container">
     <van-sidebar custom-class="side-bar" active-key="{{ activeKey }}" bind:change="onChange">
-      <van-sidebar-item custom-class="side-bar-item" title="免费" dot />
-      <van-sidebar-item custom-class="side-bar-item" title="精品" info="9" />
-      <van-sidebar-item custom-class="side-bar-item" v-for="(item,index) in 11" :key="index" title="语文" />
+      <van-sidebar-item
+        custom-class="side-bar-item"
+        v-for="(item,index) in 11"
+        :key="index"
+        title="语文"
+      />
     </van-sidebar>
     <div class="course-list">
-      <basegoods :imageURL="imageURL"></basegoods>
+      <basegoods :courseList="courseList"></basegoods>
     </div>
   </div>
 </template>
 
 <script>
-  import wepy from '@wepy/core'
-  wepy.page({
-    data: {
-      activeKey: 0,
-      imageURL: 'https://tva1.sinaimg.cn/large/006tNbRwly1g9jws48jmrj30u00vj0tc.jpg'
-    },
-    onLoad() {
-      console.log(this)
-    },
-    methods: {
-      onChange(e) {
-        const idx = e.$wx.detail
-        this.activeKey = idx
-      }
+import wepy from '@wepy/core'
+wepy.page({
+  data: {
+    activeKey: 0,
+    imageURL: 'https://tva1.sinaimg.cn/large/006tNbRwly1g9jws48jmrj30u00vj0tc.jpg'
+  },
+  onLoad() {
+    console.log(this)
+  },
+  methods: {
+    onChange(e) {
+      const idx = e.$wx.detail
+      this.activeKey = idx
     }
-  })
+  }
+})
 </script>
 
 <style lang="less">
-  .container {
-    display: flex;
-    flex-direction: row;
-    .side-bar {
-      width: 50px;
-      .side-bar-item{
-        font-size: 12px;
-      }
-    }
-    .course-list {
-      flex: 1 1;
+.container {
+  display: flex;
+  flex-direction: row;
+  .side-bar {
+    width: 50px;
+    .side-bar-item {
+      font-size: 12px;
     }
   }
+  .course-list {
+    flex: 1 1;
+  }
+}
 </style>
 
 <config>

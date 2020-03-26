@@ -4616,6 +4616,11 @@ write@^0.2.1:
   dependencies:
     mkdirp "^0.5.1"
 
+wxa-plugin-canvas@^1.1.12:
+  version "1.1.12"
+  resolved "https://registry.npm.taobao.org/wxa-plugin-canvas/download/wxa-plugin-canvas-1.1.12.tgz#639a9857e4849ca6bac3552c96d5441beb9e28f6"
+  integrity sha1-Y5qYV+SEnKa6w1UsltVEG+ueKPY=
+
 xdg-basedir@^2.0.0:
   version "2.0.0"
   resolved "https://registry.npm.taobao.org/xdg-basedir/download/xdg-basedir-2.0.0.tgz#edbc903cc385fc04523d966a335504b5504d1bd2"

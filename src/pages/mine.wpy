@@ -1,60 +1,78 @@
 <template>
-  <div class="container">
-    <div class="personal-data">
-      <div class="left-bar">
-        <button
-          class="btn-login"
-          v-if="!nickName"
-          open-type="getUserInfo"
-          bindgetuserinfo="getAuth"
-        >点击登录</button>
-        <div v-else class="username">{{nickName}}</div>
-        <div class="city">城市： {{city}}</div>
-      </div>
-      <div class="right-bar">
-        <div class="avatar-container">
-          <image v-if="avatar" class="avatar" src="{{avatar}}" />
-          <image
-            v-else
-            class="avatar"
-            src="https://tva1.sinaimg.cn/large/00831rSTgy1gcy6nyjcyuj30oo0lht9j.jpg"
-          />
-        </div>
-      </div>
+  <div v-if="isBindPhone">
+    <div v-if="!nickName" class="container-not-login">
+      <img class="img" src="../images/logo.svg" />
+      <div class="logo">用心教育，只做教育</div>
+      <button bindgetuserinfo="login" open-type="getUserInfo">微信登录</button>
     </div>
-    <ul class="operation-list">
-      <li @click="handleAccountChangeClick" class="ope-item van-hairline--bottom">
-        <van-icon class="icon" name="friends-o" />
-        <span>资料修改</span>
-        <van-icon name="arrow" />
-      </li>
-      <li @click="handlePopularizeClick" class="ope-item van-hairline--bottom">
-        <van-icon class="icon" name="coupon-o" />
-        <span>我的推广</span>
-        <van-icon name="arrow" />
-      </li>
-      <li @click="handleCourseClick" class="ope-item van-hairline--bottom">
-        <van-icon class="icon" name="shopping-cart-o" />
-        <span>我的课程</span>
-        <van-icon name="arrow" />
-      </li>
-      <li @click="handleCollectionsClick" class="ope-item van-hairline--bottom">
-        <van-icon class="icon" name="label-o" />
-        <span>收藏列表</span>
-        <van-icon name="arrow" />
-      </li>
-      <li class="ope-item">
-        <van-icon class="icon" name="phone-circle-o" />
-        <span @click="handleSchoolClick">校长办公室</span>
-        <van-icon name="arrow" />
-      </li>
-    </ul>
+    <div v-else class="container">
+      <div class="personal-data">
+        <div class="avatar-container">
+          <image class="avatar" src="{{avatar}}" />
+        </div>
+        <div class="username">{{nickName}}</div>
+      </div>
+      <ul class="operation-list">
+        <li @click="handleAccountChangeClick" class="ope-item van-hairline--bottom">
+          <van-icon class="icon" name="friends-o" />
+          <span>资料修改</span>
+          <van-icon name="arrow" />
+        </li>
+        <li @click="handlePopularizeClick" class="ope-item van-hairline--bottom">
+          <van-icon class="icon" name="coupon-o" />
+          <span>我的推广</span>
+          <van-icon name="arrow" />
+        </li>
+        <li @click="handleCourseClick" class="ope-item van-hairline--bottom">
+          <van-icon class="icon" name="shopping-cart-o" />
+          <span>我的课程</span>
+          <van-icon name="arrow" />
+        </li>
+        <li @click="handleCollectionsClick" class="ope-item van-hairline--bottom">
+          <van-icon class="icon" name="label-o" />
+          <span>收藏列表</span>
+          <van-icon name="arrow" />
+        </li>
+        <li class="ope-item">
+          <van-icon class="icon" name="phone-circle-o" />
+          <span @click="handleSchoolClick">校长办公室</span>
+          <van-icon name="arrow" />
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="bind-phone" v-else>
+    <div class="title">为了您的账号安全，请绑定您的手机：</div>
+    <div class="form">
+      <section class="form-section">
+        <div class="form-item">
+          <input type="phone" id="phone" name="phone" placeholder="请输入您的手机号" v-model.trim="phone" />
+        </div>
+        <span class="err-message">{{phoneErr}}</span>
+      </section>
+      <section class="form-section">
+        <div class="form-item">
+          <input type="text" id="authcode" placeholder="验证码" v-model.trim="authcode" />
+          <button class="btn-auth" @click="getAuthCode" v-if="timer>60">获取验证码</button>
+          <button class="btn-auth" disabled="{{timer<=60}}" v-else>{{timer}}s</button>
+        </div>
+        <span class="err-message">{{authErr}}</span>
+      </section>
+    </div>
+    <button
+      class="btn btn-submit"
+      @click="bindPhone"
+      disabled="{{!phone || !authcode || phoneErr || authErr}}"
+    >绑定</button>
   </div>
 </template>
 
 <script>
+import Apis from '../apis/apis.js'
 import wepy from '@wepy/core'
 import QQMapWX from '../libs/qqmap-wx-jssdk.min.js'
+const apis = new Apis()
+// 获取地理位置
 const wxMap = new QQMapWX({
   key: 'K4CBZ-PZ6CD-FYL4F-H6BDV-TXGO3-3WFUG'
 })
@@ -64,10 +82,110 @@ wepy.page({
     avatar: '',
     nickName: '',
     location: '',
-    city: ''
+    phone: '',
+    authcode: '',
+    city: '',
+    phoneErr: '',
+    authErr: '',
+    isBindPhone: true,
+    isValidPhone: false,
+    submitLock: false,
+    timer: 61
   },
-  onLoad() {},
   methods: {
+    async getAuthCode() {
+      if (this.submitLock) {
+        return
+      }
+      this.submitLock = true
+      if (!this.isValidPhone) {
+        this.phoneErr = '请输入正确的手机号'
+        return
+      }
+      const res = await apis.getAuthCode({ phone: this.phone })
+      if (res && res.errcode === 0) {
+        let timer
+        this.timer = this.timer - 1
+        timer = setInterval(() => {
+          if (this.timer <= 0) {
+            this.timer = 61
+            clearInterval(timer)
+            timer = null
+            return
+          }
+          this.timer = this.timer - 1
+        }, 1000)
+      } else if (res && res.errcode === 1) {
+        wx.showToast({
+          title: '不需要重复发送验证码',
+          icon: 'none',
+          duration: 2000
+        })
+      }
+      this.submitLock = false
+    },
+    async bindPhone() {
+      if (!this.authcode) {
+        this.authErr = '请填写验证码'
+        return
+      }
+      if (this.submitLock) {
+        return
+      }
+      this.submitLock = true
+      wx.getUserInfo({
+        success: res => {
+          const userInfo = res.userInfo
+          const { nickName, avatarUrl } = userInfo
+          wx.login({
+            success: async ({ code }) => {
+              try {
+                const res = await apis.bindPhone({
+                  phone: this.phone,
+                  code,
+                  authCode: this.authcode,
+                  nickName,
+                  avatar: avatarUrl
+                })
+                if (res && res.errcode === 0 && res.data) {
+                  const { token } = res.data
+                  if (token) {
+                    this.avatar = userInfo.avatarUrl
+                    this.nickName = userInfo.nickName
+                    wx.setStorage({
+                      key: 'userInfo',
+                      data: userInfo
+                    })
+                    wx.setStorage({
+                      key: 'token',
+                      data: token
+                    })
+                    wx.showToast({
+                      title: '登录成功',
+                      icon: 'success',
+                      duration: 2000
+                    })
+                    this.isBindPhone = true
+                  }
+                } else if (res && res.errcode === 1) {
+                  wx.showToast({
+                    title: '验证码不存在，请重新发送',
+                    icon: 'none',
+                    duration: 2000
+                  })
+                } else if (res && res.errcode === 2) {
+                  this.authErr = '验证码错误，请修改后再试'
+                }
+                this.submitLock = false
+              } catch (error) {
+                console.log('error: ', error)
+                this.submitLock = false
+              }
+            }
+          })
+        }
+      })
+    },
     getLocation() {
       wx.getLocation({
         type: 'wgs84',
@@ -83,67 +201,56 @@ wepy.page({
               this.city = `${name}${res.result.address}`
             }
           })
-        },
-        fail: () => {
-          this.getLocation()
         }
       })
     },
-    getAuth() {
-      wx.getStorage({
-        key: 'userInfo',
+    login() {
+      wx.getSetting({
         success: res => {
-          const { avatarUrl, nickName } = res.data
-          wx.showToast({
-            title: '登录成功',
-            icon: 'success',
-            duration: 2000
-          })
-          this.avatar = avatarUrl
-          this.nickName = nickName
-          this.getLocation()
-        },
-        fail: () => {
-          wx.getSetting({
-            success: res => {
-              if (!res.authSetting['scope.userInfo']) {
-                wx.authorize({
-                  scope: 'scope.userInfo',
-                  success() {}
-                })
-              } else {
-                this.getLocation()
-                wx.login({
-                  success: res => {
-                    if (res && res.code) {
-                      wx.request({
-                        url:
-                          'https://api.weixin.qq.com/sns/jscode2session?appid=APPID&secret=SECRET&js_code=JSCODE&grant_type=authorization_code'
+          if (!res.authSetting['scope.userInfo']) {
+            wx.authorize({
+              scope: 'scope.userInfo',
+              success() {}
+            })
+          } else {
+            wx.login({
+              success: async ({ code }) => {
+                if (code) {
+                  try {
+                    const res = await apis.login({ code })
+                    if (res && res.errcode === 0) {
+                      const { token } = res.data
+                      wx.getUserInfo({
+                        success: res => {
+                          const { nickName, avatarUrl } = res.userInfo
+                          this.avatar = avatarUrl
+                          this.nickName = nickName
+                          wx.setStorage({
+                            key: 'userInfo',
+                            data: res.userInfo
+                          })
+                          wx.setStorage({
+                            key: 'token',
+                            data: token
+                          })
+                          wx.showToast({
+                            title: '登录成功',
+                            icon: 'success',
+                            duration: 2000
+                          })
+                          this.isBindPhone = true
+                        }
                       })
+                    } else if (res && res.errcode === 1) {
+                      this.isBindPhone = false
                     }
+                  } catch (error) {
+                    console.log('error: ', error)
                   }
-                })
-                wx.getUserInfo({
-                  success: res => {
-                    if (res && res.userInfo) {
-                      const { avatarUrl, nickName } = res.userInfo
-                      wx.showToast({
-                        title: '登录成功',
-                        icon: 'success',
-                        duration: 2000
-                      })
-                      wx.setStorage({
-                        key: 'userInfo',
-                        data: res.userInfo
-                      })
-                      this.avatar = avatarUrl
-                      this.nickName = nickName
-                    }
-                  }
-                })
+                }
               }
-            }
-          })
+            })
+          }
         }
       })
     },
@@ -160,6 +267,7 @@ wepy.page({
         })
       })
     },
+
     async handleAccountChangeClick() {
       this.getUserInfo()
         .then(res => {
@@ -176,6 +284,7 @@ wepy.page({
           })
         })
     },
+
     handleSchoolClick() {
       this.$navigate({
         url: 'school'
@@ -226,6 +335,16 @@ wepy.page({
           })
         })
     }
+  },
+  watch: {
+    phone(val) {
+      this.isValidPhone = /^1[3456789]\d{9}$/.test(val.trim())
+      this.phoneErr = !/^1[3456789]\d{9}$/.test(val.trim()) ? '请输入正确的手机号' : ''
+    },
+    authcode(val) {
+      console.log('val: ', val)
+      this.authErr = val ? '' : '请填写验证码'
+    }
   }
 })
 </script>
@@ -234,30 +353,12 @@ wepy.page({
 .container {
   .personal-data {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    box-sizing: border-box;
-    height: 100px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 130px;
     padding: 10px 25px;
     border-bottom: 5px solid #ccc;
-
-    .left-bar {
-      display: flex;
-      flex-direction: column;
-      justify-content: left;
-      .btn-login {
-        background: #fff;
-        border: none;
-        font-size: 14px;
-        line-height: 1;
-        &::after {
-          content: none;
-        }
-      }
-      .city {
-        margin: 10px;
-      }
-    }
 
     .avatar-container {
       .avatar {
@@ -288,6 +389,98 @@ wepy.page({
         font-size: 14px;
       }
     }
+  }
+}
+
+.container-not-login {
+  overflow: hidden;
+  margin-top: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .img {
+    display: block;
+    width: 60%;
+  }
+
+  .logo {
+    font-size: 16px;
+    letter-spacing: 1px;
+    margin-bottom: 30px;
+  }
+
+  button {
+    width: 70%;
+    height: 40px;
+    line-height: 40px;
+    outline: none;
+    font-size: 16px;
+    letter-spacing: 0.8;
+    background-color: #40a9ff;
+    color: #fff;
+    border-radius: 4px;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.12);
+    &::after {
+      border-radius: 4px;
+    }
+  }
+}
+
+.bind-phone {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  padding: 0 15px;
+
+  .title {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 15px;
+  }
+
+  .form-section {
+    height: 50px;
+    margin-bottom: 13px;
+    .err-message {
+      font-size: 12px;
+      margin: 5px 0;
+      color: red;
+    }
+
+    .form-item {
+      display: flex;
+      align-items: center;
+      padding: 8px 7px;
+      font-size: 14px;
+      color: #333;
+      border-bottom: 1px solid #ccc;
+      input {
+        flex: 1;
+        letter-spacing: 1px;
+      }
+
+      .btn-auth {
+        border: none;
+        background: none;
+        font-size: 12px;
+        margin: 0;
+        width: 88px;
+
+        &::after {
+          content: none;
+        }
+      }
+    }
+  }
+
+  .btn-submit {
+    margin-top: 30px;
+    width: 100%;
+    height: 35px;
+    line-height: 35px;
+    font-size: 14px;
+    letter-spacing: 1px;
   }
 }
 </style>

@@ -29,7 +29,15 @@
                 </div>
                 <div class="bottom">
                   <div class="left-bar">成功邀请得9.2元</div>
-                  <div class="right-bar">去分享</div>
+                  <poster
+                    id="poster"
+                    config="{{posterConfig}}"
+                    bind:success="onPosterSuccess"
+                    bind:fail="onPosterFail"
+                  >
+                    <button>点击生成海报</button>
+                  </poster>
+                  <!-- <div class="right-bar">去分享</div> -->
                 </div>
               </div>
             </div>
@@ -52,9 +60,36 @@
 import wepy from '@wepy/core'
 wepy.page({
   data: {
-    message: ''
+    message: '',
+    posterConfig: {
+      width: 400,
+      height: 700,
+      backgroundColor: '#fff',
+      debug: false,
+      blocks: [],
+      images: [
+        {
+          x: 0,
+          y: 300,
+          width: 200,
+          height: 300,
+          url: 'https://tva1.sinaimg.cn/large/006tNbRwgy1g9knjrijc3j30u00vj0tc.jpg'
+        }
+      ]
+    }
   },
-  methods: {}
+  methods: {
+    onPosterSuccess(e) {
+      const { detail } = e.$wx
+      wx.previewImage({
+        current: detail,
+        urls: [detail]
+      })
+
+      this.detail = detail
+      // this.$apply()
+    }
+  }
 })
 </script>
 
@@ -151,7 +186,8 @@ wepy.page({
       "van-cell": "../components/vant-weapp/cell/index",
       "van-cell-group": "../components/vant-weapp/cell-group/index",
       "van-collapse": "../components/vant-weapp/collapse/index",
-      "van-collapse-item": "../components/vant-weapp/collapse-item/index"
+      "van-collapse-item": "../components/vant-weapp/collapse-item/index",
+      "poster":"../components/poster-canvas/poster/index"
     }
 }
 </config>

@@ -7,64 +7,94 @@ import wepy from '@wepy/core'
 // import eventHub from './common/eventHub'
 wepy.app({
   hooks: {},
-  globalData: {
-    userInfo: null,
-    activeCourseKey: 0
+  onLaunch() {
+    wx.getStorage({
+      key: 'token',
+      success: res => {
+        const token = res.data
+        console.log('token: ', token)
+      }
+    })
   }
 })
 </script>
 
 <config>
 {
-    "pages": [
-        "pages/index",
-        "pages/course",
-        "pages/mine",
-        "pages/search",
-        "pages/account",
-        "pages/school",
-        "pages/courseitem",
-        "pages/teacheritem",
-        "pages/comment",
-        "pages/popularize",
-        "pages/collections",
-        "pages/mycourse"
-    ],
-    "window": {
-        "backgroundTextStyle": "light",
-        "navigationBarBackgroundColor": "#fff",
-        "navigationBarTitleText": "用心教育",
-        "navigationBarTextStyle": "black"
-    },
-    "tabBar": {
-        "color": "#cccccc",
-        "selectedColor": "#ff0000",
-        list: [
-        {
-          pagePath: "pages/index",
-          text: "首页",
-          iconPath: "images/index.png",
-          selectedIconPath: "images/index-active.png"
-        },
-        {
-          pagePath: "pages/course",
-          text: "课程",
-          iconPath: "images/course.png",
-          selectedIconPath: "images/course-active.png"
-        },
-        {
-          pagePath: "pages/mine",
-          text: "个人",
-          iconPath: "images/mine.png",
-          selectedIconPath: "images/mine-active.png"
-        }
-      ]
-    },
-    "permission": {
-      "scope.userLocation": {
-        "desc": "需要获取您的地址权限以为您提供更好的服务"
+  "pages": [
+    "pages/index",
+    "pages/course",
+    "pages/mine",
+    "pages/search",
+    "pages/account",
+    "pages/school",
+    "pages/courseitem",
+    "pages/teacheritem",
+    "pages/comment",
+    "pages/popularize",
+    "pages/collections",
+    "pages/mycourse"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "用心教育",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#cccccc",
+    "selectedColor": "#40a9ff",
+    "list": [{
+        "pagePath": "pages/index",
+        "text": "首页",
+        "iconPath": "images/index.png",
+        "selectedIconPath": "images/index-active.png"
+      },
+      {
+        "pagePath": "pages/course",
+        "text": "课程",
+        "iconPath": "images/course.png",
+        "selectedIconPath": "images/course-active.png"
+      },
+      {
+        "pagePath": "pages/mine",
+        "text": "个人",
+        "iconPath": "images/mine.png",
+        "selectedIconPath": "images/mine-active.png"
       }
+    ]
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "用心教育需要获取您的地理位置以为您提供更好的服务"
     }
+  },
+  // "subPackages": [{
+  //     "root": "packages/main/",
+  //     "name": "main_pkg",
+  //     "pages": [
+  //       "pages/index",
+  //       "pages/course",
+  //       "pages/mine",
+  //       "pages/search"
+  //     ]
+  //   },
+  //   {
+  //     "root": "packages/other/",
+  //     "name": "other_pkg",
+  //     "pages": [
+  //       "pages/account",
+  //       "pages/school",
+  //       "pages/courseitem",
+  //       "pages/teacheritem",
+  //       "pages/comment",
+  //       "pages/popularize",
+  //       "pages/collections",
+  //       "pages/mycourse"
+  //     ]
+  //   }
+  // ]
 }
+
 
 </config>
