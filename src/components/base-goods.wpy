@@ -5,16 +5,15 @@
         <van-card
           custom-class="van-card"
           lazy-load="true"
-          price="{{item.price}}"
+          price="{{item.price > 0? item.price:null}}"
           origin-price="{{riginPrice && item.price}}"
-          desc="{{item.intro}}"
           title="{{item.name}}"
           thumb="{{item.img}}"
           link-type="switchTab"
         >
           <view slot="tags" class="tags">
-            <van-tag class="tag" type="success">推荐</van-tag>
-            <van-tag class="tag" type="success">推荐</van-tag>
+            <van-tag v-if="item.price === '0'" class="tag" type="danger">免费</van-tag>
+            <van-tag v-if="item.isRecommend" class="tag" type="success">推荐</van-tag>
           </view>
         </van-card>
       </div>
@@ -46,7 +45,10 @@ wepy.page({
     padding-top: 10px;
     .van-card {
       background: #fff;
-      border-bottom: 10px solid #f7f8fa;
+      border-bottom: 1px solid #e1dfdf;
+      .van-card__title {
+        font-size: 14px;
+      }
       .tags {
         margin: 3px 0;
         .tag {
