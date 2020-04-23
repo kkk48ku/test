@@ -1,6 +1,8 @@
 import Request from './request.js'
 class apis {
   constructor() {
+    // this._baseUrl = 'https://test2.zuoning327.com'
+    // this._url = 'https://test.zuoning327.com'
     this._baseUrl = 'http://localhost:3000'
     this._url = 'http://localhost:4000'
     this._defaultHeader = { 'data-tupe': 'application/json' }
@@ -53,10 +55,51 @@ class apis {
   }
 
   /**
+   * 获取课程详情
+   */
+  getCourse(id) {
+    return this._request.getRequest(this._baseUrl + `/courses/${id}`).then(res => res.data)
+  }
+
+  /**
+   * 获取教师详情
+   */
+  getTeacher(id) {
+    return this._request.getRequest(this._baseUrl + `/teachers/${id}`).then(res => res.data)
+  }
+
+  /**
    * 模糊搜索
    */
   search(keyword) {
     return this._request.getRequest(this._baseUrl + `/courses/search?keyword=${keyword}`).then(res => res.data)
+  }
+
+  /**
+   * 是否购买了课程
+   */
+  verify(token, courseId) {
+    return this._request
+      .postRequest(this._url + `/member/verify`, { courseId }, { Authorization: token })
+      .then(res => res.data)
+  }
+
+  /**
+   * 申请
+   */
+  apply(course, token) {
+    return this._request
+      .postRequest(this._url + `/member/apply`, course, { Authorization: token })
+      .then(res => res.data)
+  }
+
+  /**
+   * 获取地址
+   */
+  getCourseUrl(key, token) {
+    return this._request
+      .getRequest(this._url + `/member/course?key=${key}`, {}, { Authorization: token })
+      .then(res => res.data)
   }
 }
 export default apis

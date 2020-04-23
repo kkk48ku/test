@@ -1,7 +1,9 @@
 <template>
   <div class="base-search-container">
     <div class="search-wrapper">
-      <label for="baseSearch" v-if="label"></label>
+      <label for="baseSearch" v-if="label">
+        <img class="icon-search" src="../images/icon-search.png" />
+      </label>
       <input
         auto-focus
         id="baseSearch"
@@ -34,6 +36,7 @@
   color: #323233;
   padding: 0 10px;
   .search-wrapper {
+    position: relative;
     flex: 2;
     box-sizing: border-box;
     display: flex;
@@ -43,13 +46,15 @@
     display: flex;
     background: #f7f8fa;
   }
-  label {
-    font-size: 14px;
-    letter-spacing: 0.2px;
+  .icon-search {
+    padding-top: 4px;
+    padding-left: 8px;
+    width: 18px;
+    height: 18px;
   }
   input {
+    padding-left: 7px;
     flex: 2;
-    padding-left: 30px;
     font-size: 14px;
     border-radius: 3px;
   }

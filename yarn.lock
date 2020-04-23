@@ -4538,6 +4538,11 @@ wepy-eslint@^1.5.3:
   resolved "https://registry.npm.taobao.org/wepy-eslint/download/wepy-eslint-1.5.4.tgz#56a1315daf1f09334ad6a1e8237eb823b50f82b3"
   integrity sha1-VqExXa8fCTNK1qHoI364I7UPgrM=
 
+wepy@^1.7.2:
+  version "1.7.2"
+  resolved "https://registry.npm.taobao.org/wepy/download/wepy-1.7.2.tgz#679052401f2b1f4818644bc44f88b72975491a64"
+  integrity sha1-Z5BSQB8rH0gYZEvET4i3KXVJGmQ=
+
 which-module@^2.0.0:
   version "2.0.0"
   resolved "https://registry.npm.taobao.org/which-module/download/which-module-2.0.0.tgz#d9ef07dce77b9902b8a3a8fa4b31c3e3f7e6e87a"

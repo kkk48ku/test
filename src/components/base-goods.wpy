@@ -1,7 +1,11 @@
 <template>
   <div class="goods-container">
     <div class="goods-wrapper">
-      <div v-for="item in courseList" v-bind:key="item.name" @click="handleCourseItemClick">
+      <div
+        v-for="item in courseList"
+        v-bind:key="item.name"
+        @click="handleCourseItemClick(item._id)"
+      >
         <van-card
           custom-class="van-card"
           lazy-load="true"
@@ -9,6 +13,8 @@
           origin-price="{{riginPrice && item.price}}"
           title="{{item.name}}"
           thumb="{{item.img}}"
+          desc="{{item.detail}}"
+          thumb-mode="scaleToFill"
           link-type="switchTab"
         >
           <view slot="tags" class="tags">
@@ -29,9 +35,9 @@ wepy.page({
     imageURL: String
   },
   methods: {
-    handleCourseItemClick() {
+    handleCourseItemClick(id) {
       this.$navigate({
-        url: 'courseitem'
+        url: `courseitem?id=${id}`
       })
     }
   }
@@ -43,12 +49,20 @@ wepy.page({
   background: #f7f8fa;
   .goods-wrapper {
     padding-top: 10px;
+
+    view:n:nth-last-child(1) {
+      .van-card {
+        border-bottom: none;
+      }
+    }
     .van-card {
       background: #fff;
       border-bottom: 1px solid #e1dfdf;
+
       .van-card__title {
         font-size: 14px;
       }
+
       .tags {
         margin: 3px 0;
         .tag {

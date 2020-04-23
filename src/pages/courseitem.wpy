@@ -1,20 +1,27 @@
 <template>
   <div class="container">
     <div class="top-video-container">
-      <video
-        class="top-video"
-        object-fit="fill"
-        show-fullscreen-btn
-        src="http://wxsnsdy.tc.qq.com/105/20210/snsdyvideodownload?filekey=30280201010421301f0201690402534804102ca905ce620b1241b726bc41dcff44e00204012882540400&bizid=1023&hy=SH&fileparam=302c020101042530230204136ffd93020457e3c4ff02024ef202031e8d7f02030f42400204045a320a0201000400"
-      ></video>
+      <image
+        style="width:100%;height:100%;"
+        src="{{details.img}}"
+        mode="scaleToFill"
+        v-if="!hasPurchase"
+      />
+      <div v-else>
+        <video class="top-video" object-fit="fill" show-fullscreen-btn src="{{url}}"></video>
+      </div>
     </div>
     <van-tabs>
       <van-tab class="tab-item" title="课程详情" :swipeable="true">
         <div class="course-details van-hairline--bottom">
           <div class="course-info">
-            <div class="course-title">课程标题</div>
-            <div class="course-desc">课程简介课程简介课程简介</div>
+            <div class="course-title">{{details.name}}</div>
+            <div class="course-desc">{{details.intro}}</div>
             <div class="course-rate">
+              <div class="price">
+                <div v-if="details.price<=0">免费</div>
+                <div v-else>{{details.price}}</div>
+              </div>
               <van-rate
                 value="{{ 5 }}"
                 size="{{ 10 }}"
@@ -23,57 +30,74 @@
                 void-icon="star"
                 readonly
               />
-              <span class="play-time">380万次播放</span>
+              <span class="play-time">好评92%</span>
+            </div>
+            <div>
+              <van-goods-action-icon @click="handleCollectClick" icon="like-o" text="收藏" />
+              <van-goods-action-icon
+                v-if="hasPurchase"
+                @click="handleCommentClick"
+                icon="comment-o"
+                text="写评价"
+              />
             </div>
           </div>
         </div>
         <div class="teacher-info van-hairline--bottom">
           <div class="title">讲师</div>
           <div class="info" @click="handleTeacherClick">
-            <image class="teacher-img" src="../images/avatar.jpg" alt />
+            <image class="teacher-img" src="{{details.teacher.avatar}}" alt />
             <div class="right-bar">
-              <div class="name">黄老师</div>
-              <div class="job">高级语文教师</div>
+              <div class="name">{{details.teacher.name}}</div>
+              <div class="job">{{details.teacher.desc}}</div>
             </div>
             <van-icon color="#333" class="icon" name="arrow" />
           </div>
         </div>
         <div class="comment-list">
           <div class="title">学员评论</div>
-          <div class="comment-item van-hairline--bottom" v-for="(item, index) of 4" :key="index">
-            <div class="info">
-              <div class="username">用户 测试：</div>
-              <div class="time">2019年11月1日</div>
-            </div>
-            <div class="content">黄老师的课最好看了！黄老师的课最好看了！黄老师的课最好看了！</div>
-            <div class="rate">
-              <van-rate
-                value="{{ 5 }}"
-                size="{{ 5 }}"
-                color="#ee0a24"
-                void-color="#eee"
-                void-icon="star"
-                readonly
-              />
+          <div v-if="details.comments && details.comments.length>0">
+            <div
+              class="comment-item van-hairline--bottom"
+              v-for="(item) of details.comments"
+              :key="item.id"
+            >
+              <div class="info">
+                <div class="username">用户 测试：</div>
+                <div class="time">2019年11月1日</div>
+              </div>
+              <div class="content">黄老师的课最好看了！黄老师的课最好看了！黄老师的课最好看了！</div>
+              <div class="rate">
+                <van-rate
+                  value="{{ 5 }}"
+                  size="{{ 5 }}"
+                  color="#ee0a24"
+                  void-color="#eee"
+                  void-icon="star"
+                  readonly
+                />
+              </div>
             </div>
           </div>
+          <div v-else class="not-comment">暂无评论哦</div>
         </div>
-        <div class="info-img-container">
-          <image
-            mode="widthFix"
-            class="info-img"
-            src="https://st-gdx.dancf.com/gaodingx/49/design/20190701-195541-7972.png?x-oss-process=image/resize,w_795/interlace,1,image/format,webp"
-            alt
-          />
-          <div class="purchase-btn-container">
+        <div class="info-img-container" :style="{marginBottom:hasPurchase?0:'40px'}">
+          <image mode="widthFix" class="info-img" src="{{details.detailImgUrl}}" alt />
+          <div class="purchase-btn-container" v-if="!hasPurchase">
             <van-goods-action>
-              <van-goods-action-icon @click="handleCommentClick" icon="comment-o" text="评价" />
-              <van-goods-action-icon @click="handleCollectClick" icon="like-o" text="收藏" />
               <van-goods-action-button
+                v-if="item.price>0"
                 @click="handlePurchase"
                 class="purchase-btn"
                 custom-class="purchase-btn"
                 text="立即购买"
+              />
+              <van-goods-action-button
+                v-else
+                @click="handleApply"
+                class="purchase-btn"
+                custom-class="purchase-btn"
+                text="立即报名"
               />
             </van-goods-action>
           </div>
@@ -85,14 +109,17 @@
             <p>课程目录</p>
           </div>
           <div class="selections">
-            <div class="sel-item van-hairline--bottom" v-for="(item, index) of 11" :key="index">
+            <div
+              class="sel-item van-hairline--bottom"
+              v-for="(item, index) of details.singleSet"
+              :key="index"
+            >
               <p class="top-bar">
-                <van-tag custom-class="tag" round type="warning">第一集</van-tag>我是第一集我是第一集我是第一集我是第一集我是第一集我是第一集我是第一集
+                <van-tag custom-class="tag" round type="warning">第{{index + 1}}集</van-tag>
+                {{item.name}}
               </p>
-              <div class="bottom-bar">
-                <div class="right-bar">
-                  <van-icon size="20px" custom-class="icon" name="play-circle-o" />播放
-                </div>
+              <div class="right-bar" @click="handlePlay(item.name)">
+                <van-icon size="20px" custom-class="icon" name="play-circle-o" />播放
               </div>
             </div>
           </div>
@@ -106,17 +133,97 @@
 <script>
 import wepy from '@wepy/core'
 import Toast from '../components/vant-weapp/toast/toast'
+import Apis from '../apis/apis.js'
+
+const apis = new Apis()
+
 wepy.page({
-  onLoad(options) {
+  async onLoad(options) {
     // 课程id
     const id = options.id
 
-    console.log('id: ', id)
+    try {
+      const res = await apis.getCourse(id)
+      if (res && res.errcode === 0 && res.data) {
+        const details = res.data.details
+        this.details = details
+      }
+    } catch (error) {
+      console.log('error: ', error)
+    }
+
+    try {
+      const id = this.details.teacher.id
+      const res = await apis.getTeacher(id)
+      if (res && res.errcode === 0 && res.data) {
+        const teacher = res.data.detail
+        this.details.teacher = teacher
+      }
+    } catch (error) {
+      console.log('error: ', error)
+    }
+
+    wx.getStorage({
+      key: 'token',
+      success: async ({ data: token }) => {
+        const res = await apis.verify(token, this.details._id)
+        if (res && res.errcode === 0) {
+          this.hasPurchase = true
+        }
+      },
+      fail: () => {
+        wx.showToast({ icon: 'none', title: '请先登录' })
+      }
+    })
+  },
+  data: {
+    details: {},
+    // 是否报名或购买了课程
+    hasPurchase: false,
+    url:
+      'http://wxsnsdy.tc.qq.com/105/20210/snsdyvideodownload?filekey=30280201010421301f0201690402534804102ca905ce620b1241b726bc41dcff44e00204012882540400&bizid=1023&hy=SH&fileparam=302c020101042530230204136ffd93020457e3c4ff02024ef202031e8d7f02030f42400204045a320a0201000400'
   },
   methods: {
     handleTeacherClick() {
+      const id = this.details.teacher._id
       this.$navigate({
-        url: 'teacheritem'
+        url: `teacheritem?id=${id}`
+      })
+    },
+    async handlePlay(key) {
+      // 播放某一集
+      wx.getStorage({
+        key: 'token',
+        success: async ({ data: token }) => {
+          if (this.hasPurchase) {
+            const response = await apis.getCourseUrl(key, token)
+            if (response && response.errcode === 0 && response.data) {
+              this.url = response.data.url
+            }
+            console.log('response: ', response)
+          }
+        },
+        fail: () => {
+          wx.showToast({ icon: 'none', title: '请先登录' })
+        }
+      })
+    },
+    handleApply() {
+      // 处理报名
+      wx.getStorage({
+        key: 'token',
+        success: async res => {
+          const token = res.data
+          const response = await apis.apply(this.details, token)
+          if (response && response.errcode === 0) {
+            this.hasPurchase = true
+            wx.showToast({ icon: 'success', title: '报名成功' })
+          }
+          console.log('response: ', response)
+        },
+        fail: () => {
+          wx.showToast({ icon: 'none', title: '请先登录' })
+        }
       })
     },
     handlePurchase() {
@@ -125,11 +232,13 @@ wepy.page({
         message: '暂未接入微信支付功能！'
       })
     },
+    // 评价
     handleCommentClick() {
       this.$navigate({
         url: 'comment'
       })
     },
+    // 收藏
     handleCollectClick() {
       Toast.success({
         selector: '#toast',
@@ -169,6 +278,12 @@ wepy.page({
         font-size: 12px;
         line-height: 25px;
         color: #999;
+      }
+      .price {
+        margin-right: 15px;
+        font-size: 14px;
+        color: #ff4d4f;
+        letter-spacing: 0.2;
       }
       .course-rate {
         display: flex;
@@ -215,8 +330,14 @@ wepy.page({
       }
     }
   }
+  .not-comment {
+    font-size: 14px;
+    color: #999;
+  }
+
   .comment-list {
     padding: 10px 15px;
+
     .title {
       font-size: 14px;
       font-weight: 600;
@@ -265,12 +386,23 @@ wepy.page({
     }
     .selections {
       .sel-item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
         padding: 10px 0;
+
         .top-bar {
           line-height: 25px;
           font-size: 12px;
           color: #444;
           .tag {
+            margin-right: 3px;
+          }
+        }
+        .right-bar {
+          display: flex;
+          align-items: center;
+          .icon {
             margin-right: 3px;
           }
         }

@@ -1,6 +1,7 @@
 <template>
   <div class="container">
     <div class="search-model" @click="handleSearchClick">
+      <img src="../images/icon-search.png" class="icon-search" />
       <span class="search-input">请输入要搜索的课程或老师</span>
       <span class="search-text">搜索</span>
     </div>
@@ -79,6 +80,12 @@ wepy.page({
   box-sizing: border-box;
   color: #323233;
   padding: 0 10px;
+  .icon-search {
+    position: absolute;
+    padding-left: 8px;
+    width: 18px;
+    height: 18px;
+  }
   .search-input {
     flex: 2;
     box-sizing: border-box;

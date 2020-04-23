@@ -89,17 +89,17 @@
 					"scene": null
 				},
 				{
-					"id": -1,
+					"id": 5,
 					"name": "pages/courseitem",
 					"pathName": "pages/courseitem",
-					"query": "",
+					"query": "id=5e7e3f015f4f854637f48751",
 					"scene": null
 				},
 				{
-					"id": -1,
+					"id": 6,
 					"name": "pages/teacheritem",
 					"pathName": "pages/teacheritem",
-					"query": "",
+					"query": "id=5e7e36534dae723e18da336e",
 					"scene": null
 				},
 				{
@@ -120,6 +120,7 @@
 					"id": -1,
 					"name": "pages/collections",
 					"pathName": "pages/collections",
+					"query": "",
 					"scene": null
 				}
 			]

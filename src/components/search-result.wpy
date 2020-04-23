@@ -16,7 +16,7 @@
         </span>
       </div>
     </div>
-    <div v-else>暂无搜索结果</div>
+    <div v-else class="no-result">暂无搜索结果</div>
   </div>
 </template>
 
@@ -44,6 +44,10 @@ wepy.component({
 </script>
 
 <style lang="less" scoped>
+.no-result {
+  font-size: 14px;
+  color: #666;
+}
 .search-result-container {
   box-sizing: border-box;
   margin-top: 50px;
